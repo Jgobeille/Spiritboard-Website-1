@@ -16,17 +16,26 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <div className="logo">
+        <h4 style={{ margin: 0 }}>
+          <Link
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            {siteTitle}
+          </Link>
+        </h4>
+      </div>
+      <ul>
+        <li>News</li>
+        <li>Shows</li>
+        <li>Music</li>
+        <li>Videos</li>
+        <li>Contact</li>
+      </ul>
     </div>
   </header>
 );
