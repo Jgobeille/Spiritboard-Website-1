@@ -12,6 +12,28 @@
     "title": {
       "type": "string",
       "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "media": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "date": {
+      "type": "date"
+    },
+    "category": {
+      "model": "category",
+      "via": "posts"
     }
   }
 }
