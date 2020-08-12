@@ -30,7 +30,6 @@ export const BurgerLine = styled.div`
 
 export const Head = styled.header`
   background: ${theme.headerPurple};
-  margin-bottom: 1.45rem;
 `;
 
 export const Logo = styled.div`
@@ -50,10 +49,11 @@ export const NavLinks = styled.ul`
   width: 50%;
 
   @media screen and ${maxWidthDevice.tablet} {
-    position: fixed;
+    z-index: 5;
+    position: absolute;
     right: 0px;
-    height: 90.9vh;
-    top: 9vh;
+    height: 92vh;
+    top: 8vh;
     background: ${theme.headerPurple};
     display: flex;
     flex-direction: column;

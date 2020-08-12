@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 /* 
   Learned how to set up media Queries here:
   https://jsramblings.com/how-to-use-media-queries-with-styled-components/
@@ -46,3 +48,14 @@ export const maxWidthDevice = {
   desktop: `(max-width: ${size.desktop})`,
   desktopL: `(max-width: ${size.desktop})`,
 };
+
+export const Wrapper = styled.div`
+  position: absolute;
+  top: 8vh;
+  color: ${theme.secondaryWhite};
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+`;
