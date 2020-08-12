@@ -1,5 +1,3 @@
-/* eslint-disable import/no-duplicates */
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
@@ -64,15 +62,7 @@ class Header extends Component {
         <NavWrapper>
           <Logo>
             <h4>
-              <Link
-                to="/"
-                style={{
-                  color: `white`,
-                  textDecoration: `none`,
-                }}
-              >
-                {siteTitle}
-              </Link>
+              <StyledLink to="/">{siteTitle}</StyledLink>
             </h4>
           </Logo>
           <NavLinks ref={this.myRef} className={`${navBarActiveClass}`}>
