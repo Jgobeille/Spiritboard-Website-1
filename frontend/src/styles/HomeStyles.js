@@ -17,5 +17,10 @@ export const HeaderVideo = styled.video`
 `;
 
 export const H1 = styled.h1`
-  position: absolute;
+  z-index: 2;
+  margin-bottom: 40px;
+`;
+
+export const SocialIcons = styled.div`
+  z-index: 2;
 `;

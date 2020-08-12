@@ -71,3 +71,35 @@
     align-items: center;
     padding: 0;
   }
+
+  #spotify, #facebook, #instagram, #twitter {
+    margin-right: 35px;
+    
+    /* in order: x offset, y offset, blur size, spread size, color */
+    /* blur size and spread size are optional (they default to 0) */
+    box-shadow:
+    0 0 10px 5px #fff,  /* inner white */
+    0 0 20px 10px #f0f, /* middle magenta */
+    0 0 30px 15px #0ff; /* outer cyan */
+    
+  }
+
+  .videoOverlayText{
+    position: absolute;
+    z-index: 2;
+  }
+
+
+  /* #camera,#spot,#f,#bird {
+    -webkit-transition: fill .5s ease-out;
+    -moz-transition: fill .5s ease-out;
+    -o-transition: fill .5s ease-out;
+    transition: fill .5s ease-out;
+  } */
+  /* #camera:hover,#spot:hover,#f:hover,#bird:hover {
+    fill: #edb928;
+  } */
+
+  
+
+  

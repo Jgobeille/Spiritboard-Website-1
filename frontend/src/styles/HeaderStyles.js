@@ -22,6 +22,10 @@ export const BurgerLine = styled.div`
   height: 3px;
   background-color: ${theme.secondaryWhite};
   margin: 5px;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
 
   &:hover {
     background-color: ${theme.highlightYellow};
@@ -37,6 +41,10 @@ export const Logo = styled.div`
   letter-spacing: 5px;
   text-transform: uppercase;
   font-size: 24px;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
 
   &:hover {
     color: ${theme.highlightYellow};
@@ -97,6 +105,10 @@ export const StyledLink = styled(props => <Link {...props} />)`
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
 
   &:hover {
     color: ${theme.highlightYellow};
