@@ -61,7 +61,7 @@ export const NavLinks = styled.ul`
     position: absolute;
     right: 0px;
     height: 92vh;
-    top: 8vh;
+    top: 10vh;
     background: ${theme.headerPurple};
     display: flex;
     flex-direction: column;
@@ -113,8 +113,4 @@ export const StyledLink = styled(props => <Link {...props} />)`
   &:hover {
     color: ${theme.highlightYellow};
   }
-
-  ${'' /* @media screen and ${maxWidthDevice.tablet} {
-      opacity: 0;
-    } */}
 `;

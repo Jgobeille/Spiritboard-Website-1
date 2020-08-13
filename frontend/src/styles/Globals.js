@@ -68,9 +68,17 @@ export const Button = styled.button`
   }
 `;
 
+export const SectionHeader = styled.h1`
+  color: ${theme.accentPinkRed};
+  letter-spacing: 3px;
+  text-decoration: underline;
+  /* top | right | bottom | left */
+  margin: 50px 0 50px 0;
+`;
+
 export const Wrapper = styled.div`
-  width: 100%;
-  max-width: 1250px;
+  width: 90%;
+  max-width: 1024px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -79,6 +87,7 @@ export const Wrapper = styled.div`
 `;
 
 export const HeaderWrapper = styled(Wrapper)`
+  width: 100%;
   max-width: 100%;
   flex-direction: row;
   justify-content: center;

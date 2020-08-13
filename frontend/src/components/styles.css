@@ -72,8 +72,12 @@
     padding: 0;
   }
 
-  #spotify, #facebook, #instagram, #twitter {
+
+  #spotify, #facebook, #instagram {
     margin-right: 35px;
+  
+  }
+  #spotify, #facebook, #instagram, #twitter {
     
     /* in order: x offset, y offset, blur size, spread size, color */
     /* blur size and spread size are optional (they default to 0) */
@@ -84,21 +88,33 @@
     
   }
 
+  #footer-spotify, #footer-facebook, #footer-instagram {
+    margin-right: 10px;
+    
+    
+  }
+
   .videoOverlayText{
     position: absolute;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
 
-  /* #camera,#spot,#f,#bird {
+
+
+  #footer-camera,#footer-spot,#footer-f,#footer-bird {
     -webkit-transition: fill .5s ease-out;
     -moz-transition: fill .5s ease-out;
     -o-transition: fill .5s ease-out;
     transition: fill .5s ease-out;
-  } */
-  /* #camera:hover,#spot:hover,#f:hover,#bird:hover {
+  } 
+
+   #footer-camera:hover,#footer-spot:hover,#footer-f:hover,#footer-bird:hover {
     fill: #edb928;
-  } */
+  }
 
   
 

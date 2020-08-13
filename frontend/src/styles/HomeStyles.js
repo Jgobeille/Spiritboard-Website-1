@@ -1,7 +1,4 @@
-import React from 'react';
-
 import styled, { keyframes } from 'styled-components';
-import { Link } from 'gatsby';
 
 import { maxWidthDevice, minWidthDevice, theme } from './Globals.js';
 
@@ -21,14 +18,85 @@ export const H1 = styled.h1`
   margin-bottom: 40px;
 `;
 
-export const SectionHeader = styled.h1`
-  color: ${theme.accentPinkRed};
-  letter-spacing: 3px;
-  text-decoration: underline;
-  /* top | right | bottom | left */
-  margin: 20px 0 20px 0;
-`;
-
 export const SocialIcons = styled.div`
   z-index: 2;
+`;
+
+/**
+ *
+ * Tour Section
+ *
+ */
+
+export const Text = styled.p`
+  color: ${theme.secondaryWhite};
+  margin-bottom: 5px;
+
+  @media screen and ${maxWidthDevice.tablet} {
+    text-align: center;
+  }
+`;
+
+export const ShowDescription = styled.div`
+  width: 65%;
+`;
+
+export const ShowRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 14px 10px;
+
+  @media screen and ${maxWidthDevice.tablet} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+export const ShowsTable = styled.div`
+  width: 100%;
+`;
+
+export const ShowTickets = styled.div`
+  display: flex;
+  width: 35%;
+  justify-content: center;
+  align-items: center;
+`;
+
+/**
+ *
+ * News Section
+ *
+ */
+
+export const Article = styled.div`
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const ArticleDate = styled.p`
+  color: ${theme.secondaryWhite};
+  font-weight: 700;
+`;
+
+export const ArticleTitle = styled.h2`
+  color: ${theme.secondaryWhite};
+  font-weight: 700;
+`;
+
+export const ArticleContent = styled.p`
+  color: ${theme.secondaryWhite};
+  align-self: end;
+`;
+
+export const ArticleAuthor = styled.p`
+  color: ${theme.secondaryWhite};
+  font-weight: 700;
+  align-self: end;
 `;

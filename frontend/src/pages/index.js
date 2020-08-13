@@ -2,7 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
+import Music from '../components/music';
+import News from '../components/news';
 import Tour from '../components/tour';
+import Videos from '../components/videos';
 // import Image from '../components/image';
 import SEO from '../components/seo';
 
@@ -108,6 +111,9 @@ const IndexPage = () => {
         </div>
       </HeaderWrapper>
       <Tour />
+      <News />
+      <Music />
+      <Videos />
     </Layout>
   );
 };
