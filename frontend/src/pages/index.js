@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
+import Tour from '../components/tour';
 // import Image from '../components/image';
 import SEO from '../components/seo';
 
 import { HeaderVideo, SocialIcons, H1 } from '../styles/HomeStyles.js';
-import { Wrapper, theme } from '../styles/Globals.js';
+import { HeaderWrapper, theme } from '../styles/Globals.js';
 
 // SVGs
 // import { ReactComponent as FacebookLogo } from '../socialmedia/facebook.svg';
@@ -17,7 +18,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Wrapper>
+      <HeaderWrapper>
         <HeaderVideo loop autoPlay muted>
           <track kind="captions" />
           <source src={videoSource} type="video/mp4" />
@@ -105,7 +106,8 @@ const IndexPage = () => {
             </Link>
           </SocialIcons>
         </div>
-      </Wrapper>
+      </HeaderWrapper>
+      <Tour />
     </Layout>
   );
 };

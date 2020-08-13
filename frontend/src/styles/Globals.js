@@ -49,13 +49,40 @@ export const maxWidthDevice = {
   desktopL: `(max-width: ${size.desktop})`,
 };
 
-export const Wrapper = styled.div`
-  position: absolute;
-  top: 8vh;
+export const Button = styled.button`
+  background: rgba(0, 0, 0, 0.5);
   color: ${theme.secondaryWhite};
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid ${theme.secondaryWhite};
+  border-radius: 3px;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+
+  &:hover {
+    color: ${theme.accentPinkRed};
+    border: 2px solid ${theme.accentPinkRed};
+  }
+`;
+
+export const Wrapper = styled.div`
   width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   padding: 0;
+`;
+
+export const HeaderWrapper = styled(Wrapper)`
+  max-width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 8vh;
+  color: ${theme.secondaryWhite};
 `;

@@ -21,6 +21,14 @@ export const H1 = styled.h1`
   margin-bottom: 40px;
 `;
 
+export const SectionHeader = styled.h1`
+  color: ${theme.accentPinkRed};
+  letter-spacing: 3px;
+  text-decoration: underline;
+  /* top | right | bottom | left */
+  margin: 20px 0 20px 0;
+`;
+
 export const SocialIcons = styled.div`
   z-index: 2;
 `;
