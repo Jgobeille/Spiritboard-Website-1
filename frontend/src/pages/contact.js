@@ -1,45 +1,43 @@
 import React from 'react';
-import styled from 'styled-components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import { Button, HeaderPic, HeaderWrapper, OverlayText, SectionHeader, Wrapper } from '../styles/Globals';
+import { HeaderPic, HeaderWrapper, OverlayText, SectionHeader } from '../styles/Globals';
+
+import { FormButton, FormWrapper, Input, Text, TextArea } from '../styles/ContactStyles';
 
 const ContactPage = () => (
   <Layout>
     <SEO title="Contact" description="Want to book a show with us or just chat? Shoot us an email!" />
     <HeaderWrapper>
-      <HeaderPic src="https://spiritboard.s3.amazonaws.com/887762F1-A6F4-4DAE-B3A0-F71E3887DD2F.png" />
+      <HeaderPic src="https://spiritboard.s3.amazonaws.com/6393DE97-B3D7-4791-8857-A77B6CFD686F.jpeg" />
       <OverlayText>
         <SectionHeader>CONTACT</SectionHeader>
       </OverlayText>
     </HeaderWrapper>
-    <Wrapper>
+    <FormWrapper>
+      <Text>Want to book us for a show or questions about merch? Contact us here!</Text>
       <form name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="contact" />
+        <Input type="hidden" name="bot-field" />
+        <Input type="hidden" name="form-name" value="contact" />
         <label htmlFor="fname">
-          First Name
-          <input type="text" id="fname" name="firstname" placeholder="first name" />
+          <Input type="text" id="fname" name="firstname" placeholder="first name" />
         </label>
 
         <label htmlFor="lname">
-          Last Name
-          <input type="text" id="lname" name="lastname" placeholder="last name" />
+          <Input type="text" id="lname" name="lastname" placeholder="last name" />
         </label>
 
         <label htmlFor="email">
-          Email
-          <input type="email" id="email" name="email" placeholder="email" />
+          <Input type="email" id="email" name="email" placeholder="email" />
         </label>
 
         <label htmlFor="message">
-          Message
-          <textarea id="message" name="message" placeholder="Write something.." />
+          <TextArea id="message" name="message" placeholder="Write something.." />
         </label>
-        <Button type="submit">Send</Button>
+        <FormButton type="submit">Send</FormButton>
       </form>
-    </Wrapper>
+    </FormWrapper>
   </Layout>
 );
 
