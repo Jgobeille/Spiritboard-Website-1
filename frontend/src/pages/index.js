@@ -10,7 +10,7 @@ import Videos from '../components/videos';
 import SEO from '../components/seo';
 
 import { HeaderVideo, SocialIcons, H1 } from '../styles/HomeStyles.js';
-import { HeaderWrapper, theme } from '../styles/Globals.js';
+import { HeaderWrapper, OverlayText, theme } from '../styles/Globals.js';
 
 // SVGs
 // import { ReactComponent as FacebookLogo } from '../socialmedia/facebook.svg';
@@ -28,7 +28,7 @@ const IndexPage = () => {
           <source src={videoSource} type="video/ogg" />
           Your browser does not support the video tag.
         </HeaderVideo>
-        <div className="overlayText">
+        <OverlayText>
           <H1>Spiritboard</H1>
           <SocialIcons>
             <Link to="/">
@@ -108,7 +108,7 @@ const IndexPage = () => {
               </svg>
             </Link>
           </SocialIcons>
-        </div>
+        </OverlayText>
       </HeaderWrapper>
       <Tour />
       <News />
