@@ -66,11 +66,11 @@ class Header extends Component {
             </h4>
           </Logo>
           <NavLinks ref={this.myRef} className={`${navBarActiveClass}`}>
-            <StyledLink to="/">News</StyledLink>
+            <StyledLink to="/news">News</StyledLink>
 
             <StyledLink to="/">Music</StyledLink>
 
-            <StyledLink to="/">Shows</StyledLink>
+            <StyledLink to="/tour">Shows</StyledLink>
 
             <StyledLink to="/">Videos</StyledLink>
 

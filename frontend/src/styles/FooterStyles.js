@@ -7,6 +7,7 @@ export const FooterSection = styled.footer`
   /* position: absolute; */
   width: 100%;
   padding: 50px 50px;
+  margin-top: 50px;
 `;
 
 export const SocialIconsWrapper = styled.div`

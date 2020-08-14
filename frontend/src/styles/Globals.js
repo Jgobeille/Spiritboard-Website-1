@@ -68,6 +68,17 @@ export const Button = styled.button`
   }
 `;
 
+export const HeaderPic = styled.img`
+  z-index: 1;
+  top: 0;
+  color: #f1f1f1;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 92vh;
+  width: 100%;
+  object-fit: fill;
+  padding: 0;
+`;
+
 export const SectionHeader = styled.h1`
   color: ${theme.accentPinkRed};
   letter-spacing: 3px;
@@ -94,4 +105,12 @@ export const HeaderWrapper = styled(Wrapper)`
   align-items: center;
   top: 8vh;
   color: ${theme.secondaryWhite};
+`;
+
+export const OverlayText = styled.div`
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

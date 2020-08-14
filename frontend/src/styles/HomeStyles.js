@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import { maxWidthDevice, minWidthDevice, theme } from './Globals.js';
 
@@ -78,11 +78,14 @@ export const Article = styled.div`
   width: 70%;
   flex-direction: column;
   align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 `;
 
 export const ArticleDate = styled.p`
   color: ${theme.secondaryWhite};
   font-weight: 700;
+  padding-top: 50px;
 `;
 
 export const ArticleTitle = styled.h2`
@@ -98,5 +101,6 @@ export const ArticleContent = styled.p`
 export const ArticleAuthor = styled.p`
   color: ${theme.secondaryWhite};
   font-weight: 700;
+  padding-bottom: 50px;
   align-self: end;
 `;

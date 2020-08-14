@@ -28,7 +28,7 @@ const IndexPage = () => {
           <source src={videoSource} type="video/ogg" />
           Your browser does not support the video tag.
         </HeaderVideo>
-        <div className="videoOverlayText">
+        <div className="overlayText">
           <H1>Spiritboard</H1>
           <SocialIcons>
             <Link to="/">
