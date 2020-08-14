@@ -76,7 +76,7 @@ class Header extends Component {
 
             <StyledLink to="/">Sign Up</StyledLink>
 
-            <StyledLink to="/">Contact</StyledLink>
+            <StyledLink to="/contact">Contact</StyledLink>
           </NavLinks>
           <Burger className={`${navBarActiveClass}`} onClick={() => this.toggleHamburger()}>
             <BurgerLine className={`${toggleClass} line1`} />
