@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { maxWidthDevice, minWidthDevice, theme } from './Globals.js';
+import { maxWidthDevice, theme } from './Globals.js';
 
 export const HeaderVideo = styled.video`
   z-index: 1;
