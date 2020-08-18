@@ -77,11 +77,11 @@ export default class SignUpPage extends Component {
 
     return (
       <Layout>
-        <SEO title="Contact" description="Want to book a show with us or just chat? Shoot us an email!" />
+        <SEO title="Sign Up" description="Sign up to get updates on new merch and upcoming shows!" />
         <HeaderWrapper>
           <HeaderPic src="https://spiritboard.s3.amazonaws.com/6393DE97-B3D7-4791-8857-A77B6CFD686F.jpeg" />
           <OverlayText>
-            <SectionHeader>Sign Up</SectionHeader>
+            <SectionHeader>SIGN UP</SectionHeader>
           </OverlayText>
         </HeaderWrapper>
         <Wrapper>
