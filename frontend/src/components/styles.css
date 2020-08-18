@@ -17,7 +17,8 @@
   .isActive {
     transform: translateX(0%) !important;
   }
-  
+
+
   @keyframes navLinkFade {
     from {
       opacity: 0;

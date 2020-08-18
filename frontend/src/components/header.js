@@ -14,6 +14,10 @@ class Header extends Component {
     };
   }
 
+  componentDidMount() {
+    window.addEventListener('resize', this.reportWindowSize);
+  }
+
   componentDidUpdate() {
     const { active } = this.state;
 
@@ -25,6 +29,23 @@ class Header extends Component {
       document.body.style.height = '';
     }
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.reportWindowSize);
+  }
+
+  // resets navigation when width is greater than tabler
+  reportWindowSize = () => {
+    const widthOutput = window.innerWidth;
+
+    if (widthOutput > 959) {
+      this.setState({
+        active: false,
+        navBarActiveClass: '',
+        toggleClass: 'un-toggle',
+      });
+    }
+  };
 
   toggleHamburger = () => {
     const { active } = this.state;

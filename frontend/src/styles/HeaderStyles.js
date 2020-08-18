@@ -6,7 +6,6 @@ import { Link } from 'gatsby';
 import { maxWidthDevice, minWidthDevice, theme } from './Globals.js';
 
 export const Burger = styled.div`
-  margin-bottom: 1.45rem;
   cursor: pointer;
   @media screen and ${maxWidthDevice.tablet} {
     display: block;
