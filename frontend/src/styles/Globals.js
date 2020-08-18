@@ -82,9 +82,10 @@ export const HeaderPic = styled.img`
 export const SectionHeader = styled.h1`
   color: ${theme.accentPinkRed};
   letter-spacing: 3px;
-  text-decoration: underline;
   /* top | right | bottom | left */
   margin: 50px 0 50px 0;
+  text-align: center;
+  font-size: 5em;
 `;
 
 export const Wrapper = styled.div`
@@ -105,6 +106,7 @@ export const HeaderWrapper = styled(Wrapper)`
   align-items: center;
   top: 8vh;
   color: ${theme.secondaryWhite};
+  margin-bottom: 50px;
 `;
 
 export const OverlayText = styled.div`

@@ -10,7 +10,7 @@ import Videos from '../components/videos';
 import SEO from '../components/seo';
 
 import { HeaderVideo, SocialIcons, H1 } from '../styles/HomeStyles.js';
-import { HeaderWrapper, OverlayText, theme } from '../styles/Globals.js';
+import { HeaderWrapper, OverlayText, SectionHeader, theme } from '../styles/Globals.js';
 
 // SVGs
 // import { ReactComponent as FacebookLogo } from '../socialmedia/facebook.svg';
@@ -110,8 +110,11 @@ const IndexPage = () => {
           </SocialIcons>
         </OverlayText>
       </HeaderWrapper>
+      <SectionHeader>TOUR</SectionHeader>
       <Tour />
+      <SectionHeader>NEWS</SectionHeader>
       <News />
+      <SectionHeader>MUSIC</SectionHeader>
       <Music />
       <Videos />
     </Layout>

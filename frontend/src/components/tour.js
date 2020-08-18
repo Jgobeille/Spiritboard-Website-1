@@ -3,11 +3,10 @@ import { Link } from 'gatsby';
 
 import { Text, ShowDescription, ShowsTable, ShowRow, ShowTickets } from '../styles/HomeStyles.js';
 
-import { Button, SectionHeader, Wrapper } from '../styles/Globals.js';
+import { Button, Wrapper } from '../styles/Globals.js';
 
 const Tour = () => (
   <Wrapper>
-    <SectionHeader>TOUR</SectionHeader>
     <ShowsTable>
       <ShowRow>
         <ShowDescription>

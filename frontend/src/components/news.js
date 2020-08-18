@@ -1,12 +1,11 @@
 import React from 'react';
 
-import { Wrapper, SectionHeader } from '../styles/Globals.js';
+import { Wrapper } from '../styles/Globals.js';
 
 import { Article, ArticleAuthor, ArticleContent, ArticleDate, ArticleTitle } from '../styles/HomeStyles.js';
 
 const News = () => (
   <Wrapper>
-    <SectionHeader>NEWS</SectionHeader>
     <Article>
       <ArticleDate>September 12, 2020</ArticleDate>
       <ArticleTitle>New Music!!!</ArticleTitle>
