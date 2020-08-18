@@ -77,6 +77,10 @@ export const HeaderPic = styled.img`
   width: 100%;
   object-fit: fill;
   padding: 0;
+
+  @media screen and ${maxWidthDevice.tablet} {
+    object-fit: cover;
+  }
 `;
 
 export const SectionHeader = styled.h1`

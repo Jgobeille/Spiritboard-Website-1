@@ -14,6 +14,18 @@ class Header extends Component {
     };
   }
 
+  componentDidUpdate() {
+    const { active } = this.state;
+
+    if (active) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100vh';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+    }
+  }
+
   toggleHamburger = () => {
     const { active } = this.state;
     // toggle the active boolean in the state
@@ -38,21 +50,6 @@ class Header extends Component {
       }
     );
   };
-
-  // Work in Progress
-
-  // animateFadeIn = () => {
-  //   /*
-  //   steps:
-  //   gather up all the styled links
-
-  //   */
-  //   const navLinks = [...this.myRef.current.children];
-
-  //   navLinks.forEach((link, i) => {
-  //     link.style.animation = `navLinkFade 0.5s ease forwards ${i / 7}`;
-  //   });
-  // };
 
   render() {
     const { siteTitle } = this.props;

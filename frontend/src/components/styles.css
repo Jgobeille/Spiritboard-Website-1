@@ -1,10 +1,12 @@
 /* Custom */
 
+
 @media screen and (max-width: 768px){
     body,html {
       overflow-x: hidden;
     }
   }
+
 
   /*----------------------------- 
   
@@ -92,6 +94,10 @@
     margin-right: 10px;
     
     
+  }
+
+  h4 {
+    margin-block-end: 0;
   }
 
 

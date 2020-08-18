@@ -55,13 +55,15 @@ export const NavLinks = styled.ul`
   display: flex;
   justify-content: space-around;
   width: 50%;
+  margin-block-end: 0 !important;
+  margin-bottom: 1.45em;
 
   @media screen and ${maxWidthDevice.tablet} {
     z-index: 5;
     position: absolute;
     right: 0px;
-    height: 92vh;
-    top: 10vh;
+    height: 88vh;
+    top: 12vh;
     background: ${theme.headerPurple};
     display: flex;
     flex-direction: column;
@@ -98,6 +100,7 @@ export const NavWrapper = styled.nav`
   align-items: center;
   min-height: 8vh;
   padding-top: 20px;
+  padding-bottom: 20px;
 `;
 
 export const StyledLink = styled(props => <Link {...props} />)`
