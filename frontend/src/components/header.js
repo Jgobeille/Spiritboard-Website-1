@@ -74,7 +74,7 @@ class Header extends Component {
 
             <StyledLink to="/">Videos</StyledLink>
 
-            <StyledLink to="/">Sign Up</StyledLink>
+            <StyledLink to="/signup">Sign Up</StyledLink>
 
             <StyledLink to="/contact">Contact</StyledLink>
           </NavLinks>

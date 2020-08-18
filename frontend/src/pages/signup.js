@@ -2,30 +2,17 @@
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import { HeaderPic, HeaderWrapper, OverlayText, SectionHeader, theme, Wrapper } from '../styles/Globals';
+import { HeaderPic, HeaderWrapper, OverlayText, SectionHeader, Wrapper } from '../styles/Globals';
 
-import { FormButton, Input, Text } from '../styles/ContactStyles';
+import { StyledLink } from '../styles/HeaderStyles';
 
-const SignUpInput = styled(Input)`
-  margin-right: 30px;
-`;
+import { FormButton, Text } from '../styles/ContactStyles';
 
-const SignUpContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
-const Message = styled.p`
-  color: ${theme.accentPinkRed};
-  text-align: left;
-`;
+import { SignUpInput, SignUpContent, Message } from '../styles/SignUpStyles';
 
 export default class SignUpPage extends Component {
   constructor(props) {
@@ -49,21 +36,27 @@ export default class SignUpPage extends Component {
     }));
   };
 
+  // If error message has url. split url and message apart and displays url correctly
   splitMessage = message => {
     // get the first and last position of <a> and </a>
     // add that content to a new variable
     // then get the url from that text and make a link
 
     if (message) {
-      console.log(typeof message);
       if (message.includes('<a href')) {
-        const index1 = message.indexOf('"');
-        const index2 = message.lastIndexOf('"');
-        console.log(index1);
-        console.log(index2);
-        const URLSubstring = message.substring(index1 + 1, index2);
+        const URLindex1 = message.indexOf('"');
+        const URLindex2 = message.lastIndexOf('"');
+        const messageEndIndex = message.indexOf('<a');
+        const messageSubstring = message.substring(0, messageEndIndex);
+        const URLSubstring = message.substring(URLindex1 + 1, URLindex2);
         this.setState({
           url: URLSubstring,
+          resultMsg: messageSubstring,
+        });
+      } else {
+        this.setState({
+          resultMsg: message,
+          url: '',
         });
       }
     }
@@ -73,12 +66,9 @@ export default class SignUpPage extends Component {
     const { email, firstName, lastName } = this.state;
     e.preventDefault();
     const result = await addToMailchimp(email, { firstName, lastName });
-    // I recommend setting `result` to React state
-    // but you can do whatever you want
     this.splitMessage(result.msg);
     this.setState({
       result,
-      resultMsg: result.msg,
     });
   };
 
@@ -98,9 +88,18 @@ export default class SignUpPage extends Component {
           <Text>Sign up to get updates on new merch and upcoming shows!</Text>
           {result ? (
             <div>
-              * {result.msg}
-              <Message>Please visit this link to update your profile:</Message>
-              <Link to={url}>link</Link>
+              <Message>
+                *{result.result}: {resultMsg}
+              </Message>
+            </div>
+          ) : (
+            ''
+          )}
+          {url ? (
+            <div>
+              <Message>
+                Please visit this <StyledLink to={url}>link</StyledLink> to update your profile!
+              </Message>
             </div>
           ) : (
             ''
