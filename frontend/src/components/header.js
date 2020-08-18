@@ -18,6 +18,7 @@ class Header extends Component {
     window.addEventListener('resize', this.reportWindowSize);
   }
 
+  // checks if navigation is active. If active, will disable scrolling
   componentDidUpdate() {
     const { active } = this.state;
 
