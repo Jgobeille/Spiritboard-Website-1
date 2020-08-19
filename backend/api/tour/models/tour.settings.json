@@ -9,20 +9,27 @@
     "timestamps": true
   },
   "attributes": {
-    "name": {
-      "type": "string"
+    "venuename": {
+      "type": "string",
+      "required": true,
+      "default": "venue name"
     },
     "date": {
-      "type": "datetime"
+      "type": "datetime",
+      "required": true
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "location": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "ticket": {
-      "type": "string"
+    "ticketsURL": {
+      "type": "string",
+      "required": true,
+      "default": "Tickets Url"
     }
   }
 }

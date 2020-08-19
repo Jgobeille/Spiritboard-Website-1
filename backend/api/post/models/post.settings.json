@@ -17,7 +17,7 @@
       "type": "richtext",
       "required": true
     },
-    "media": {
+    "image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -30,10 +30,6 @@
     },
     "date": {
       "type": "date"
-    },
-    "category": {
-      "model": "category",
-      "via": "posts"
     }
   }
 }

@@ -1,55 +1,40 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { Link } from 'gatsby';
+import styled from 'styled-components';
 
 import { Text, ShowDescription, ShowsTable, ShowRow, ShowTickets } from '../styles/HomeStyles.js';
 
-import { Button, Wrapper } from '../styles/Globals.js';
+import { Button, theme, Wrapper } from '../styles/Globals.js';
 
-const Tour = () => (
+const ATag = styled.a`
+  color: ${theme.secondaryWhite};
+  text-decoration: none;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+
+  &:hover {
+    color: ${theme.accentPinkRed};
+  }
+`;
+
+const Tour = ({ date, location, name, tickets, description }) => (
   <Wrapper>
     <ShowsTable>
       <ShowRow>
         <ShowDescription>
-          <Text>September 11, 2020</Text>
-          <Text>@ The Mad Hatter</Text>
-          <Text>Newport, Kentucky</Text>
-          <Text>W/ Boy Meets World</Text>
+          <Text>{date}</Text>
+          <Text>@ {name}</Text>
+          <Text>{location}</Text>
+          <Text>{description}</Text>
         </ShowDescription>
         <ShowTickets>
-          <Button type="submit">Tickets</Button>
-        </ShowTickets>
-      </ShowRow>
-      <ShowRow>
-        <ShowDescription>
-          <Text>September 11, 2020</Text>
-          <Text>@ The Mad Hatter</Text>
-          <Text>Newport, Kentucky</Text>
-          <Text>W/ Boy Meets World</Text>
-        </ShowDescription>
-        <ShowTickets>
-          <Button type="submit">Tickets</Button>
-        </ShowTickets>
-      </ShowRow>
-      <ShowRow>
-        <ShowDescription>
-          <Text>September 11, 2020</Text>
-          <Text>@ The Mad Hatter</Text>
-          <Text>Newport, Kentucky</Text>
-          <Text>W/ Boy Meets World</Text>
-        </ShowDescription>
-        <ShowTickets>
-          <Button type="submit">Tickets</Button>
-        </ShowTickets>
-      </ShowRow>
-      <ShowRow>
-        <ShowDescription>
-          <Text>September 11, 2020</Text>
-          <Text>@ The Mad Hatter</Text>
-          <Text>Newport, Kentucky</Text>
-          <Text>W/ Boy Meets World</Text>
-        </ShowDescription>
-        <ShowTickets>
-          <Button type="submit">Tickets</Button>
+          <Button type="">
+            <ATag href={tickets} rel="noopener norefferer" target="_blank">
+              Tickets
+            </ATag>
+          </Button>
         </ShowTickets>
       </ShowRow>
     </ShowsTable>

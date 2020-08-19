@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import Music from '../components/music';
@@ -17,6 +17,43 @@ import { HeaderWrapper, OverlayText, SectionHeader, theme } from '../styles/Glob
 
 const IndexPage = () => {
   const videoSource = 'https://spiritboard.s3.amazonaws.com/Band_Stock_1.mp4';
+
+  const data = useStaticQuery(graphql`
+    query {
+      allStrapiPost {
+        edges {
+          node {
+            strapiId
+            title
+            description
+            date
+            image {
+              publicURL
+            }
+            created_by {
+              firstname
+              lastname
+            }
+          }
+        }
+      }
+      allStrapiTour {
+        edges {
+          node {
+            strapiId
+            venuename
+            date
+            location
+            description
+            ticketsURL
+          }
+        }
+      }
+    }
+  `);
+
+  console.log(data);
+  const lastNews = data.allStrapiPost.edges.length - 1;
 
   return (
     <Layout>
@@ -111,9 +148,26 @@ const IndexPage = () => {
         </OverlayText>
       </HeaderWrapper>
       <SectionHeader>TOUR</SectionHeader>
-      <Tour />
+      {data.allStrapiTour.edges.map((tour, i) => (
+        <Tour
+          date={tour.node.date}
+          location={tour.node.location}
+          name={tour.node.venuename}
+          tickets={tour.node.ticketsURL}
+          description={tour.node.description}
+          key={tour.node.strapiId}
+        />
+      ))}
       <SectionHeader>NEWS</SectionHeader>
-      <News />
+      <News
+        title={data.allStrapiPost.edges[lastNews].node.title}
+        date={data.allStrapiPost.edges[lastNews].node.date}
+        image={data.allStrapiPost.edges[lastNews].node.image.publicURL}
+        description={data.allStrapiPost.edges[lastNews].node.description}
+        firstName={data.allStrapiPost.edges[lastNews].node.created_by.firstname}
+        lastName={data.allStrapiPost.edges[lastNews].node.created_by.lastname}
+        key={data.allStrapiPost.edges[lastNews].node.strapiId}
+      />
       <SectionHeader>MUSIC</SectionHeader>
       <Music />
       <Videos />

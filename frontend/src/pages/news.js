@@ -1,27 +1,60 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import styled from 'styled-components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import News from '../components/news';
 
 import { HeaderPic, HeaderWrapper, OverlayText, SectionHeader } from '../styles/Globals';
 
-const NewsPage = () => (
-  <Layout>
-    <SEO
-      title="News"
-      description="Stay up to date with us! We post all news regarding new merch, music, and upcoming shows"
-    />
-    <HeaderWrapper>
-      <HeaderPic src="https://spiritboard.s3.amazonaws.com/Adobe_Post_20200813_2358180.9424302084233002.png" />
-      <OverlayText>
-        <SectionHeader>NEWS</SectionHeader>
-      </OverlayText>
-    </HeaderWrapper>
-    <News />
-  </Layout>
-);
+const NewsPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allStrapiPost {
+        edges {
+          node {
+            strapiId
+            title
+            description
+            date
+            image {
+              publicURL
+            }
+            created_by {
+              firstname
+              lastname
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <Layout>
+      <SEO
+        title="News"
+        description="Stay up to date with us! We post all news regarding new merch, music, and upcoming shows"
+      />
+      <HeaderWrapper>
+        <HeaderPic src="https://spiritboard.s3.amazonaws.com/Adobe_Post_20200813_2358180.9424302084233002.png" />
+        <OverlayText>
+          <SectionHeader>NEWS</SectionHeader>
+        </OverlayText>
+      </HeaderWrapper>
+      {data.allStrapiPost.edges.map(post => (
+        <News
+          title={post.node.title}
+          date={post.node.date}
+          image={post.node.image ? post.node.image.publicURL : ''}
+          description={post.node.description}
+          firstName={post.node.created_by.firstname}
+          lastName={post.node.created_by.lastname}
+          key={post.node.strapiId}
+        />
+      ))}
+    </Layout>
+  );
+};
 
 export default NewsPage;

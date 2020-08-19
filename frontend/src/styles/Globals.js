@@ -54,7 +54,7 @@ export const Button = styled.button`
   color: ${theme.secondaryWhite};
   font-size: 1em;
   margin: 1em;
-  padding: 0.25em 1em;
+  padding: 0.5em 2em;
   border: 2px solid ${theme.secondaryWhite};
   border-radius: 3px;
   -webkit-transition: color 0.5s ease-out;
