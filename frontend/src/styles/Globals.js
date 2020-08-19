@@ -14,6 +14,7 @@ export const theme = {
   headerPurple: '#661384',
   accentPinkRed: '#f61067',
   lavender: '#c9c9ee',
+  primaryFont: 'ouijaboard',
 };
 // Media Queries
 
@@ -85,11 +86,12 @@ export const HeaderPic = styled.img`
 
 export const SectionHeader = styled.h1`
   color: ${theme.accentPinkRed};
-  letter-spacing: 3px;
+  font-family: ${theme.primaryFont};
+  letter-spacing: 2px;
   /* top | right | bottom | left */
   margin: 50px 0 50px 0;
   text-align: center;
-  font-size: 5em;
+  font-size: ${props => (props.big ? '5em' : '2em')};
 `;
 
 export const Wrapper = styled.div`

@@ -17,4 +17,6 @@ export const SignUpContent = styled.div`
 export const Message = styled.p`
   color: ${theme.accentPinkRed};
   text-align: left;
+  font-family: ${theme.primaryFont};
+  letter-spacing: 2px;
 `;

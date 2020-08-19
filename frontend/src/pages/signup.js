@@ -81,7 +81,7 @@ export default class SignUpPage extends Component {
         <HeaderWrapper>
           <HeaderPic src="https://spiritboard.s3.amazonaws.com/6393DE97-B3D7-4791-8857-A77B6CFD686F.jpeg" />
           <OverlayText>
-            <SectionHeader>SIGN UP</SectionHeader>
+            <SectionHeader big>SIGN UP</SectionHeader>
           </OverlayText>
         </HeaderWrapper>
         <Wrapper>

@@ -15,7 +15,9 @@ export const HeaderVideo = styled.video`
 
 export const H1 = styled.h1`
   z-index: 2;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+  font-family: ${theme.primaryFont};
+  letter-spacing: 2px;
 `;
 
 export const SocialIcons = styled.div`
@@ -96,13 +98,19 @@ export const Article = styled.div`
 
 export const ArticleDate = styled.p`
   color: ${theme.secondaryWhite};
+  align-self: end;
   font-weight: 700;
   padding-top: 50px;
+  margin-bottom: 5px;
 `;
 
 export const ArticleTitle = styled.h2`
   color: ${theme.secondaryWhite};
+  align-self: end;
   font-weight: 700;
+  font-family: ${theme.primaryFont};
+  letter-spacing: 2px;
+  font-size: 2em;
 `;
 
 export const ArticleContent = styled.p`

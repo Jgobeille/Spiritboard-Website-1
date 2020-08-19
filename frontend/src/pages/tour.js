@@ -30,7 +30,7 @@ const TourPage = () => {
       <HeaderWrapper>
         <HeaderPic src="https://spiritboard.s3.amazonaws.com/887762F1-A6F4-4DAE-B3A0-F71E3887DD2F.png" />
         <OverlayText>
-          <SectionHeader>TOUR</SectionHeader>
+          <SectionHeader big>TOUR</SectionHeader>
         </OverlayText>
       </HeaderWrapper>
       {data.allStrapiTour.edges.map(tour => (

@@ -52,7 +52,6 @@ const IndexPage = () => {
     }
   `);
 
-  console.log(data);
   const lastNews = data.allStrapiPost.edges.length - 1;
 
   return (

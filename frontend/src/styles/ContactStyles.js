@@ -42,4 +42,6 @@ export const FormButton = styled(Button)`
 export const Text = styled.p`
   color: ${theme.secondaryWhite};
   margin: 20px 0 50px 0;
+  font-family: ${theme.primaryFont};
+  letter-spacing: 2px;
 `;

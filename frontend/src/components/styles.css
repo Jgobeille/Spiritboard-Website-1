@@ -4,6 +4,15 @@
   src: url(../fonts/ouijaBoard.ttf);
 }
 
+@font-face {
+  font-family: roboto-slab;
+  src: url(../fonts/RobotoSlab-VariableFont_wght.ttf);
+}
+
+html {
+  font: 112.5%/1.45em roboto;
+}
+
 @media screen and (max-width: 768px){
     body,html {
       overflow-x: hidden;

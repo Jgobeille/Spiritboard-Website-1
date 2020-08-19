@@ -39,7 +39,7 @@ const NewsPage = () => {
       <HeaderWrapper>
         <HeaderPic src="https://spiritboard.s3.amazonaws.com/Adobe_Post_20200813_2358180.9424302084233002.png" />
         <OverlayText>
-          <SectionHeader>NEWS</SectionHeader>
+          <SectionHeader big>NEWS</SectionHeader>
         </OverlayText>
       </HeaderWrapper>
       {data.allStrapiPost.edges.map(post => (

@@ -103,6 +103,8 @@ export const NavWrapper = styled.nav`
 `;
 
 export const StyledLink = styled(props => <Link {...props} />)`
+  font-family: ${theme.primaryFont};
+  letter-spacing: 2px;
   color: ${theme.secondaryWhite};
   text-decoration: none;
   font-weight: bold;

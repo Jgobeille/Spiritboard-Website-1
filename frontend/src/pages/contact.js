@@ -14,7 +14,7 @@ const ContactPage = () => (
     <HeaderWrapper>
       <HeaderPic src="https://spiritboard.s3.amazonaws.com/6393DE97-B3D7-4791-8857-A77B6CFD686F.jpeg" />
       <OverlayText>
-        <SectionHeader>CONTACT</SectionHeader>
+        <SectionHeader big>CONTACT</SectionHeader>
       </OverlayText>
     </HeaderWrapper>
     <FormWrapper>
