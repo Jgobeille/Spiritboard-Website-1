@@ -33,7 +33,7 @@ const TourPage = () => {
           <SectionHeader>TOUR</SectionHeader>
         </OverlayText>
       </HeaderWrapper>
-      {data.allStrapiTour.edges.map((tour, i) => (
+      {data.allStrapiTour.edges.map(tour => (
         <Tour
           date={tour.node.date}
           location={tour.node.location}

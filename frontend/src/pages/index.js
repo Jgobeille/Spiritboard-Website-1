@@ -148,7 +148,7 @@ const IndexPage = () => {
         </OverlayText>
       </HeaderWrapper>
       <SectionHeader>TOUR</SectionHeader>
-      {data.allStrapiTour.edges.map((tour, i) => (
+      {data.allStrapiTour.edges.map(tour => (
         <Tour
           date={tour.node.date}
           location={tour.node.location}

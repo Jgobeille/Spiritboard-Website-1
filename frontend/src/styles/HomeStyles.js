@@ -28,6 +28,19 @@ export const SocialIcons = styled.div`
  *
  */
 
+export const ATag = styled.a`
+  color: ${theme.secondaryWhite};
+  text-decoration: none;
+  -webkit-transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+
+  &:hover {
+    color: ${theme.accentPinkRed};
+  }
+`;
+
 export const Text = styled.p`
   color: ${theme.secondaryWhite};
   margin-bottom: 5px;
@@ -75,7 +88,6 @@ export const ShowTickets = styled.div`
 
 export const Article = styled.div`
   display: flex;
-  width: 70%;
   flex-direction: column;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
