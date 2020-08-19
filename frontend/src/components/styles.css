@@ -1,5 +1,8 @@
 /* Custom */
-
+@font-face {
+  font-family: ouijaBoard;
+  src: url(../fonts/ouijaBoard.ttf);
+}
 
 @media screen and (max-width: 768px){
     body,html {
