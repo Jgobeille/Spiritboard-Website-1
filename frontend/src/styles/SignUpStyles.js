@@ -11,7 +11,7 @@ export const SignUpInput = styled(Input)`
 export const SignUpContent = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: end;
 
   @media screen and ${maxWidthDevice.mobileL} {
     display: block;
@@ -20,11 +20,14 @@ export const SignUpContent = styled.div`
 
 export const Message = styled.p`
   color: ${theme.accentPinkRed};
-  text-align: left;
+  align-self: end;
   font-family: ${theme.primaryFont};
   letter-spacing: 2px;
+  line-height: 30px;
+  margin-bottom: 10px;
 
   @media screen and ${maxWidthDevice.mobileL} {
+    font-size: 2.5vw;
     letter-spacing: 0px;
   }
 `;

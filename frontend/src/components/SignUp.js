@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 
 import addToMailchimp from 'gatsby-plugin-mailchimp';
@@ -6,7 +7,7 @@ import { Wrapper } from '../styles/Globals';
 
 import { StyledLink } from '../styles/HeaderStyles';
 
-import { FormButton, Text } from '../styles/ContactStyles';
+import { FormButton } from '../styles/ContactStyles';
 
 import { SignUpInput, SignUpContent, Message } from '../styles/SignUpStyles';
 
@@ -30,6 +31,11 @@ export default class SignUp extends Component {
     this.setState(() => ({
       [name]: value,
     }));
+  };
+
+  handleClick = () => {
+    const { toggle } = this.props;
+    toggle();
   };
 
   // If error message has url. split url and message apart and displays url correctly
@@ -70,14 +76,9 @@ export default class SignUp extends Component {
 
   render() {
     const { email, firstName, lastName, result, resultMsg, url } = this.state;
+    const { showCloseButton } = this.props;
     return (
       <Wrapper>
-        <svg viewBox="0 0 500 500">
-          <path id="curve" width="100" d="M80,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-          <text fontSize="24px" width="500px">
-            <textPath xlinkHref="#curve">JOIN THE SEANCE</textPath>
-          </text>
-        </svg>
         {result ? (
           <div>
             <Message>
@@ -88,11 +89,11 @@ export default class SignUp extends Component {
           ''
         )}
         {url ? (
-          <div>
+          <>
             <Message>
               Please visit this <StyledLink to={url}>link</StyledLink> to update your profile!
             </Message>
-          </div>
+          </>
         ) : (
           ''
         )}
@@ -118,7 +119,7 @@ export default class SignUp extends Component {
               required
             />
 
-            <SignUpInput
+            {/* <SignUpInput
               type="text"
               name="firstName"
               tabIndex="-1"
@@ -134,11 +135,18 @@ export default class SignUp extends Component {
               placeholder="last name"
               onChange={this.change}
               value={lastName}
-            />
+            /> */}
 
             <FormButton type="submit" name="subscribe" id="mc-embedded-subscribe" className="button">
               Submit
             </FormButton>
+            {showCloseButton ? (
+              <FormButton type="" onClick={() => this.handleClick()} name="close" className="button">
+                Close
+              </FormButton>
+            ) : (
+              ''
+            )}
           </SignUpContent>
         </form>
       </Wrapper>

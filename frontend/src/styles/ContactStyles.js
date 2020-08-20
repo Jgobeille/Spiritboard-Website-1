@@ -35,7 +35,7 @@ export const FormWrapper = styled(Wrapper)`
 `;
 
 export const FormButton = styled(Button)`
-  margin: 0;
+  margin: 0 20px 0 0;
   padding: 0.5em 2em;
 `;
 

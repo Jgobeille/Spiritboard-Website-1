@@ -13,11 +13,11 @@ const TourPage = () => {
         edges {
           node {
             strapiId
-            name
+            venuename
             date
             location
             description
-            ticket
+            ticketsURL
           }
         }
       }
