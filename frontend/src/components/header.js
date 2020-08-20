@@ -23,16 +23,15 @@ class Header extends Component {
     const { active } = this.state;
 
     if (active) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.height = '100vh';
+      this.setBodyPositions('hidden', 'hidden', '100vh', 'relative');
     } else {
-      document.body.style.overflow = '';
-      document.body.style.height = '';
+      this.setBodyPositions('', '', '', '');
     }
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.reportWindowSize);
+    this.setBodyPositions('', '', '', '');
   }
 
   // resets navigation when width is greater than tabler
@@ -46,6 +45,13 @@ class Header extends Component {
         toggleClass: 'un-toggle',
       });
     }
+  };
+
+  setBodyPositions = (x, y, height, position) => {
+    document.body.style.overflowX = x;
+    document.body.style.overflowY = y;
+    document.body.style.height = height;
+    document.body.style.position = position;
   };
 
   toggleHamburger = () => {

@@ -91,7 +91,7 @@ export const SectionHeader = styled.h1`
   /* top | right | bottom | left */
   margin: 50px 0 50px 0;
   text-align: center;
-  font-size: ${props => (props.big ? '5em' : '2em')};
+  font-size: ${props => (props.big ? '9vw' : '2em')};
 `;
 
 export const Wrapper = styled.div`

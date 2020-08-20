@@ -61,8 +61,8 @@ export const NavLinks = styled.ul`
     z-index: 5;
     position: absolute;
     right: 0px;
-    height: 88vh;
-    top: 12vh;
+    height: 93vh;
+    top: 7vh;
     background: ${theme.headerPurple};
     display: flex;
     flex-direction: column;
@@ -74,6 +74,8 @@ export const NavLinks = styled.ul`
 
   @media screen and ${maxWidthDevice.mobileL} {
     width: 100%;
+    height: 92vh;
+    top: 8vh;
   }
 `;
 
@@ -93,6 +95,7 @@ export const navLinkFade = keyframes`
 
 export const NavWrapper = styled.nav`
   margin: 0 auto;
+  position: relative;
   max-width: 1250px;
   display: flex;
   justify-content: space-around;

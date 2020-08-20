@@ -161,7 +161,9 @@ const IndexPage = () => {
       <News
         title={data.allStrapiPost.edges[lastNews].node.title}
         date={data.allStrapiPost.edges[lastNews].node.date}
-        image={data.allStrapiPost.edges[lastNews].node.image.publicURL}
+        image={
+          data.allStrapiPost.edges[lastNews].node.image ? data.allStrapiPost.edges[lastNews].node.image.publicURL : ''
+        }
         description={data.allStrapiPost.edges[lastNews].node.description}
         firstName={data.allStrapiPost.edges[lastNews].node.created_by.firstname}
         lastName={data.allStrapiPost.edges[lastNews].node.created_by.lastname}
