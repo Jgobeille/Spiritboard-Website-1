@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
@@ -7,6 +7,7 @@ import News from '../components/news';
 import Tour from '../components/tour';
 import Videos from '../components/videos';
 // import Image from '../components/image';
+import PopUp from '../components/PopUp.js';
 import SEO from '../components/seo';
 
 import { HeaderVideo, SocialIcons, H1 } from '../styles/HomeStyles.js';
@@ -17,6 +18,12 @@ import { HeaderWrapper, OverlayText, SectionHeader, theme } from '../styles/Glob
 
 const IndexPage = () => {
   const videoSource = 'https://spiritboard.s3.amazonaws.com/Band_Stock_1.mp4';
+
+  const [seen, setSeen] = useState(true);
+
+  const togglePop = () => {
+    setSeen(false);
+  };
 
   const data = useStaticQuery(graphql`
     query {
@@ -57,6 +64,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      {seen ? <PopUp toggle={togglePop} /> : null}
       <HeaderWrapper>
         <HeaderVideo loop autoPlay muted>
           <track kind="captions" />

@@ -23,4 +23,8 @@ export const Message = styled.p`
   text-align: left;
   font-family: ${theme.primaryFont};
   letter-spacing: 2px;
+
+  @media screen and ${maxWidthDevice.mobileL} {
+    letter-spacing: 0px;
+  }
 `;
