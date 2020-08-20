@@ -62,6 +62,8 @@ export const Button = styled.button`
   -moz-transition: color 0.5s ease-out;
   -o-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
+  cursor: pointer;
+  outline: none;
 
   &:hover {
     color: ${theme.accentPinkRed};

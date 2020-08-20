@@ -25,11 +25,9 @@ const Tour = ({ date, location, name, tickets, description }) => {
             <Text>{description}</Text>
           </ShowDescription>
           <ShowTickets>
-            <Button type="">
-              <ATag href={tickets} rel="noopener norefferer" target="_blank">
-                Tickets
-              </ATag>
-            </Button>
+            <ATag href={tickets} rel="noopener norefferer" target="_blank">
+              <Button type="">Tickets</Button>
+            </ATag>
           </ShowTickets>
         </ShowRow>
       </ShowsTable>

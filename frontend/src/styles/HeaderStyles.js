@@ -3,15 +3,17 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'gatsby';
 
-import { maxWidthDevice, minWidthDevice, theme } from './Globals.js';
+import { maxWidthDevice, theme } from './Globals.js';
 
 export const Burger = styled.div`
   cursor: pointer;
+  z-index: 10;
+
   @media screen and ${maxWidthDevice.tablet} {
     display: block;
   }
 
-  @media screen and ${minWidthDevice.tablet} {
+  @media screen and (min-width: 780px) {
     display: none;
   }
 `;
@@ -53,7 +55,7 @@ export const Logo = styled.div`
 export const NavLinks = styled.ul`
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 55%;
   margin-block-end: 0 !important;
   margin-bottom: 1.45em;
 

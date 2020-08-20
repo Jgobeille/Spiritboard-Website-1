@@ -17,6 +17,7 @@ export const H1 = styled.h1`
   z-index: 2;
   margin-bottom: 60px;
   font-family: ${theme.primaryFont};
+  font-size: 1.9em;
   letter-spacing: 2px;
 `;
 
