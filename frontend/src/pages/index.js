@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
@@ -6,8 +7,7 @@ import Music from '../components/music';
 import News from '../components/news';
 import Tour from '../components/tour';
 import Videos from '../components/videos';
-// import Image from '../components/image';
-import PopUp from '../components/PopUp.js';
+import PopUp from '../components/popUp.js';
 import SEO from '../components/seo';
 
 import { HeaderVideo, SocialIcons, H1 } from '../styles/HomeStyles.js';
@@ -16,16 +16,16 @@ import { HeaderWrapper, OverlayText, SectionHeader, theme } from '../styles/Glob
 const IndexPage = () => {
   const [seen, setSeen] = useState(false);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setSeen(true);
-    }, 3000);
-
-    return () => clearTimeout(timeout);
-  }, []);
+  const setBodyPositions = (x, y, height, position) => {
+    document.body.style.overflowX = x;
+    document.body.style.overflowY = y;
+    document.body.style.height = height;
+    document.body.style.position = position;
+  };
 
   const togglePop = () => {
     setSeen(false);
+    setBodyPositions('', '', '', '');
   };
 
   const data = useStaticQuery(graphql`
@@ -62,12 +62,26 @@ const IndexPage = () => {
     }
   `);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSeen(true);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    if (seen === true) {
+      setBodyPositions('hidden', 'hidden', '100vh', 'relative');
+    }
+  }, [seen, setBodyPositions]);
+
   const videoSource = 'https://spiritboard.s3.amazonaws.com/Band_Stock_1.mp4';
 
   const lastNews = data.allStrapiPost.edges.length - 1;
 
   return (
-    <Layout>
+    <Layout setBodyPositions={setBodyPositions}>
       <SEO title="Home" />
       {seen ? <PopUp toggle={togglePop} /> : null}
       <HeaderWrapper>

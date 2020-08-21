@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
@@ -21,20 +22,22 @@ class Header extends Component {
   // checks if navigation is active. If active, will disable scrolling
   componentDidUpdate() {
     const { active } = this.state;
+    const { setBodyPositions } = this.props;
 
     if (active) {
-      this.setBodyPositions('hidden', 'hidden', '100vh', 'relative');
+      setBodyPositions('hidden', 'hidden', '100vh', 'relative');
     } else {
-      this.setBodyPositions('', '', '', '');
+      setBodyPositions('', '', '', '');
     }
   }
 
   componentWillUnmount() {
+    const { setBodyPositions } = this.props;
     window.removeEventListener('resize', this.reportWindowSize);
-    this.setBodyPositions('', '', '', '');
+    setBodyPositions('', '', '', '');
   }
 
-  // resets navigation when width is greater than tabler
+  // resets navigation when width is greater than tablet
   reportWindowSize = () => {
     const widthOutput = window.innerWidth;
 
@@ -45,13 +48,6 @@ class Header extends Component {
         toggleClass: 'un-toggle',
       });
     }
-  };
-
-  setBodyPositions = (x, y, height, position) => {
-    document.body.style.overflowX = x;
-    document.body.style.overflowY = y;
-    document.body.style.height = height;
-    document.body.style.position = position;
   };
 
   toggleHamburger = () => {

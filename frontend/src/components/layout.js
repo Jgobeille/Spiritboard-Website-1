@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /**
  * Layout component that queries for data
  * with Gatsby's useStaticQuery component
@@ -14,7 +15,7 @@ import Header from './header';
 import './layout.css';
 import './styles.css';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, setBodyPositions }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -27,7 +28,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header setBodyPositions={setBodyPositions} siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
       </div>

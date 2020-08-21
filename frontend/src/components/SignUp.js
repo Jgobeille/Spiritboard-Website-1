@@ -16,8 +16,6 @@ export default class SignUp extends Component {
     super(props);
     this.state = {
       email: '',
-      firstName: '',
-      lastName: '',
       result: '',
       resultMsg: '',
       url: '',
@@ -65,9 +63,9 @@ export default class SignUp extends Component {
   };
 
   _handleSubmit = async e => {
-    const { email, firstName, lastName } = this.state;
+    const { email } = this.state;
     e.preventDefault();
-    const result = await addToMailchimp(email, { firstName, lastName });
+    const result = await addToMailchimp(email);
     this.splitMessage(result.msg);
     this.setState({
       result,
@@ -75,7 +73,7 @@ export default class SignUp extends Component {
   };
 
   render() {
-    const { email, firstName, lastName, result, resultMsg, url } = this.state;
+    const { email, result, resultMsg, url } = this.state;
     const { showCloseButton } = this.props;
     return (
       <Wrapper>
@@ -99,8 +97,8 @@ export default class SignUp extends Component {
         )}
         {this.splitMessage()}
         <form
-          onSubmit={e => this._handleSubmit(e, email, { firstName, lastName })}
-          action="https://gmail.us17.list-manage.com/subscribe/post?u=8f71d2f15da02bc250a388b00&amp;id=77804799f4"
+          onSubmit={e => this._handleSubmit(e, email)}
+          action="https://spiritboardband.us17.list-manage.com/subscribe/post?u=b0659c53e1bb70c70946f45f5&amp;id=1c9940f486"
           method="POST"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
@@ -118,24 +116,6 @@ export default class SignUp extends Component {
               onChange={this.change}
               required
             />
-
-            {/* <SignUpInput
-              type="text"
-              name="firstName"
-              tabIndex="-1"
-              placeholder="first name"
-              onChange={this.change}
-              value={firstName}
-            />
-
-            <SignUpInput
-              type="text"
-              name="lastName"
-              tabIndex="-1"
-              placeholder="last name"
-              onChange={this.change}
-              value={lastName}
-            /> */}
 
             <FormButton type="submit" name="subscribe" id="mc-embedded-subscribe" className="button">
               Submit

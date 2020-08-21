@@ -4,7 +4,7 @@
 import React from 'react';
 
 import Layout from '../components/layout';
-import SignUp from '../components/SignUp';
+import SignUp from '../components/signUp';
 import SEO from '../components/seo';
 
 import { HeaderPic, HeaderWrapper, OverlayText, SectionHeader, Wrapper } from '../styles/Globals';

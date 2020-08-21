@@ -20,9 +20,9 @@ export const Modal = styled.div`
   left: 0;
   background-color: rgba(0, 0, 0, 1);
 
-  animation: fadeIn ease 3s;
-  -webkit-animation: fadeIn ease 3s;
-  -moz-animation: fadeIn ease 3s;
-  -o-animation: fadeIn ease 3s;
-  -ms-animation: fadeIn ease 3s;
+  animation: ${fadeIn} ease 3s;
+  -webkit-animation: ${fadeIn} ease 3s;
+  -moz-animation: ${fadeIn} ease 3s;
+  -o-animation: ${fadeIn} ease 3s;
+  -ms-animation: ${fadeIn} ease 3s;
 `;
