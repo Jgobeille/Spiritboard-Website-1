@@ -81,14 +81,15 @@ html {
     margin-right: 35px;
   
   }
+  
   #spotify, #facebook, #instagram, #twitter {
     
     /* in order: x offset, y offset, blur size, spread size, color */
     /* blur size and spread size are optional (they default to 0) */
     box-shadow:
-    0 0 10px 5px #fff,  /* inner white */
-    0 0 20px 10px #f0f, /* middle magenta */
-    0 0 30px 15px #0ff; /* outer cyan */
+    0 0 10px 5px #fff,  
+    0 0 20px 10px #f0f, 
+    0 0 30px 15px #0ff; 
     
   }
 
