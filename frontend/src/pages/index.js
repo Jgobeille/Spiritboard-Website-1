@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
@@ -13,13 +13,16 @@ import SEO from '../components/seo';
 import { HeaderVideo, SocialIcons, H1 } from '../styles/HomeStyles.js';
 import { HeaderWrapper, OverlayText, SectionHeader, theme } from '../styles/Globals.js';
 
-// SVGs
-// import { ReactComponent as FacebookLogo } from '../socialmedia/facebook.svg';
-
 const IndexPage = () => {
-  const videoSource = 'https://spiritboard.s3.amazonaws.com/Band_Stock_1.mp4';
+  const [seen, setSeen] = useState(false);
 
-  const [seen, setSeen] = useState(true);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSeen(true);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const togglePop = () => {
     setSeen(false);
@@ -58,6 +61,8 @@ const IndexPage = () => {
       }
     }
   `);
+
+  const videoSource = 'https://spiritboard.s3.amazonaws.com/Band_Stock_1.mp4';
 
   const lastNews = data.allStrapiPost.edges.length - 1;
 
