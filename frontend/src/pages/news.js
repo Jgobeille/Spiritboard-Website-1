@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import News from '../components/news';
 
+import { Text } from '../styles/HomeStyles';
 import { HeaderPic, HeaderWrapper, OverlayText, SectionHeader } from '../styles/Globals';
 
 const NewsPage = () => {
@@ -42,17 +43,21 @@ const NewsPage = () => {
           <SectionHeader big>NEWS</SectionHeader>
         </OverlayText>
       </HeaderWrapper>
-      {data.allStrapiPost.edges.map(post => (
-        <News
-          title={post.node.title}
-          date={post.node.date}
-          image={post.node.image ? post.node.image.publicURL : ''}
-          description={post.node.description}
-          firstName={post.node.created_by.firstname}
-          lastName={post.node.created_by.lastname}
-          key={post.node.strapiId}
-        />
-      ))}
+      {data.allStrapiPost.edges ? (
+        data.allStrapiPost.edges.map(post => (
+          <News
+            title={post.node.title}
+            date={post.node.date}
+            image={post.node.image ? post.node.image.publicURL : ''}
+            description={post.node.description}
+            firstName={post.node.created_by.firstname}
+            lastName={post.node.created_by.lastname}
+            key={post.node.strapiId}
+          />
+        ))
+      ) : (
+        <Text>There are no new updates yet</Text>
+      )}
     </Layout>
   );
 };

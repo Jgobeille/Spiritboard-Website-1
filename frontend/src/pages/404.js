@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 import { Text } from '../styles/HomeStyles.js';
-import { HeaderPic, HeaderWrapper, OverlayText, SectionHeader, theme, Wrapper } from '../styles/Globals.js';
+import { HeaderPic, HeaderWrapper, OverlayText, SectionHeader, Wrapper } from '../styles/Globals.js';
 
 const NotFoundPage = () => (
   <Layout>
@@ -17,7 +17,7 @@ const NotFoundPage = () => (
       </OverlayText>
     </HeaderWrapper>
     <Wrapper>
-      <h2 style={{ color: '#f7f7ff' }}>NOT FOUND</h2>
+      <SectionHeader>Not Found</SectionHeader>
       <Text>We couldn't find the page you are looking for!</Text>
       <Text>
         You can return to the Home page by clicking <Link to="/">here</Link>

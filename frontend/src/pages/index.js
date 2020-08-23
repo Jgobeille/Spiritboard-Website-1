@@ -15,7 +15,7 @@ import FacebookLogo from '../components/svgs/facebook';
 import InstagramLogo from '../components/svgs/instagram';
 import TwitterLogo from '../components/svgs/twitter';
 
-import { HeaderVideo, SocialIcons, H1 } from '../styles/HomeStyles.js';
+import { HeaderVideo, SocialIcons, H1, Text } from '../styles/HomeStyles.js';
 import { HeaderWrapper, OverlayText, SectionHeader, theme } from '../styles/Globals.js';
 
 const IndexPage = () => {
@@ -117,28 +117,37 @@ const IndexPage = () => {
         </OverlayText>
       </HeaderWrapper>
       <SectionHeader>TOUR</SectionHeader>
-      {data.allStrapiTour.edges.map(tour => (
-        <Tour
-          date={tour.node.date}
-          location={tour.node.location}
-          name={tour.node.venuename}
-          tickets={tour.node.ticketsURL}
-          description={tour.node.description}
-          key={tour.node.strapiId}
-        />
-      ))}
+      {data.allStrapiTour.edges ? (
+        data.allStrapiTour.edges.map(tour => (
+          <Tour
+            date={tour.node.date}
+            location={tour.node.location}
+            name={tour.node.venuename}
+            tickets={tour.node.ticketsURL}
+            description={tour.node.description}
+            key={tour.node.strapiId}
+          />
+        ))
+      ) : (
+        <Text>There are no shows currently scheduled</Text>
+      )}
+
       <SectionHeader>NEWS</SectionHeader>
-      <News
-        title={data.allStrapiPost.edges[lastNews].node.title}
-        date={data.allStrapiPost.edges[lastNews].node.date}
-        image={
-          data.allStrapiPost.edges[lastNews].node.image ? data.allStrapiPost.edges[lastNews].node.image.publicURL : ''
-        }
-        description={data.allStrapiPost.edges[lastNews].node.description}
-        firstName={data.allStrapiPost.edges[lastNews].node.created_by.firstname}
-        lastName={data.allStrapiPost.edges[lastNews].node.created_by.lastname}
-        key={data.allStrapiPost.edges[lastNews].node.strapiId}
-      />
+      {lastNews ? (
+        <News
+          title={data.allStrapiPost.edges[lastNews].node.title}
+          date={data.allStrapiPost.edges[lastNews].node.date}
+          image={
+            data.allStrapiPost.edges[lastNews].node.image ? data.allStrapiPost.edges[lastNews].node.image.publicURL : ''
+          }
+          description={data.allStrapiPost.edges[lastNews].node.description}
+          firstName={data.allStrapiPost.edges[lastNews].node.created_by.firstname}
+          lastName={data.allStrapiPost.edges[lastNews].node.created_by.lastname}
+          key={data.allStrapiPost.edges[lastNews].node.strapiId}
+        />
+      ) : (
+        <Text>There are no new updates yet</Text>
+      )}
       <SectionHeader>MUSIC</SectionHeader>
       <Music />
       <Videos />
