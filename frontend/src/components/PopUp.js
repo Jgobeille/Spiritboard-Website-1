@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import SignUp from './signUp';
 import JoinTheSeance from './svgs/joinTheSeance.js';
 
@@ -22,4 +23,7 @@ const PopUp = ({ toggle }) => (
   </Modal>
 );
 
+PopUp.propTypes = {
+  toggle: PropTypes.func,
+};
 export default PopUp;

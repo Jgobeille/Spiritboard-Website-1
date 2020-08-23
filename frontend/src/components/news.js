@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Wrapper } from '../styles/Globals.js';
 
@@ -23,6 +23,15 @@ const News = ({ title, date, image, description, firstName, lastName }) => {
       </Article>
     </Wrapper>
   );
+};
+
+News.propTypes = {
+  title: PropTypes.string,
+  date: PropTypes.string,
+  image: PropTypes.string,
+  description: PropTypes.string,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
 };
 
 export default News;

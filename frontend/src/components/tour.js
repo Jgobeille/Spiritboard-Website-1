@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 import { ATag, Text, ShowDescription, ShowsTable, ShowRow, ShowTickets } from '../styles/HomeStyles.js';
 
@@ -33,6 +33,14 @@ const Tour = ({ date, location, name, tickets, description }) => {
       </ShowsTable>
     </Wrapper>
   );
+};
+
+Tour.propTypes = {
+  date: PropTypes.string,
+  location: PropTypes.string,
+  name: PropTypes.string,
+  tickets: PropTypes.string,
+  description: PropTypes.string,
 };
 
 export default Tour;

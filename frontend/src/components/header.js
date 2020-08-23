@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
@@ -112,6 +111,7 @@ class Header extends Component {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  setBodyPositions: PropTypes.func,
 };
 
 Header.defaultProps = {

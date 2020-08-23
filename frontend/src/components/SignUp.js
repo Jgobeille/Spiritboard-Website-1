@@ -1,5 +1,7 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable jsx-a11y/label-has-for */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 
@@ -107,7 +109,7 @@ export default class SignUp extends Component {
           noValidate
         >
           <SignUpContent>
-            <label htmlFor="mce-EMAIL" />
+            <label htmlFor="email" />
             <SignUpInput
               type="email"
               value={email}
@@ -133,3 +135,8 @@ export default class SignUp extends Component {
     );
   }
 }
+
+SignUp.propTypes = {
+  toggle: PropTypes.func,
+  showCloseButton: PropTypes.element,
+};
