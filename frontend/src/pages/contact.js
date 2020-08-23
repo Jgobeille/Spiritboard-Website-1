@@ -33,7 +33,7 @@ const ContactPage = () => (
         </label>
 
         <label>
-          <TextArea id="message" name="message" placeholder="Write something.." />
+          <TextArea id="message-form" name="message" placeholder="Write something.." />
         </label>
         <FormButton type="submit">Send</FormButton>
       </form>
