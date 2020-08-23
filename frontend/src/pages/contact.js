@@ -19,22 +19,20 @@ const ContactPage = () => (
     </HeaderWrapper>
     <FormWrapper>
       <Text>Want to book us for a show or questions about merch? Contact us here!</Text>
-      <form name="contact-form" method="POST" data-netlify="true">
-        {/* <Input type="hidden" name="bot-field" />
-        <Input type="hidden" name="form-name" value="contact" /> */}
-        <label htmlFor="fname">
+      <form name="contact-form" encType="application/x-www-form-urlencoded" method="POST" data-netlify="true" netlify>
+        <label>
           <Input type="text" id="fname" name="firstname" placeholder="first name" />
         </label>
 
-        <label htmlFor="lname">
+        <label>
           <Input type="text" id="lname" name="lastname" placeholder="last name" />
         </label>
 
-        <label htmlFor="email">
+        <label>
           <Input type="email" id="email" name="email" placeholder="email" />
         </label>
 
-        <label htmlFor="message">
+        <label>
           <TextArea id="message" name="message" placeholder="Write something.." />
         </label>
         <FormButton type="submit">Send</FormButton>
