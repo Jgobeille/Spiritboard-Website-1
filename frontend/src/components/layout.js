@@ -12,10 +12,11 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Footer from './footer';
 import Header from './header';
+
 import './layout.css';
 import './styles.css';
 
-const Layout = ({ children, setBodyPositions }) => {
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,11 +27,18 @@ const Layout = ({ children, setBodyPositions }) => {
     }
   `);
 
+  const setBodyPositions = (x, y, height, position) => {
+    document.body.style.overflowX = x;
+    document.body.style.overflowY = y;
+    document.body.style.height = height;
+    document.body.style.position = position;
+  };
+
   return (
     <>
       <Header setBodyPositions={setBodyPositions} siteTitle={data.site.siteMetadata.title} />
       <div>
-        <main>{children}</main>
+        <main setBodyPositions={setBodyPositions}> {children}</main>
       </div>
       <Footer />
     </>

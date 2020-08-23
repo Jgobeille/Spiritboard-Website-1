@@ -88,7 +88,7 @@ const IndexPage = () => {
   const lastNews = data.allStrapiPost.edges.length - 1;
 
   return (
-    <Layout setBodyPositions={setBodyPositions}>
+    <Layout>
       <SEO title="Home" />
       {seen ? <PopUp toggle={togglePop} /> : null}
       <HeaderWrapper>
