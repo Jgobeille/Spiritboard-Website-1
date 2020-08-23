@@ -111,6 +111,10 @@ textPath {
 
 }
 
+.hidden {
+  display: none;
+}
+
 
 
 
