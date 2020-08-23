@@ -11,7 +11,7 @@ import { Candle, Glow, Flames, Thread } from '../styles/CandleStyles';
 const PopUp = ({ toggle }) => (
   <Modal>
     <Wrapper>
-      <JoinTheSeance />
+      <JoinTheSeance fill="black" />
       <Candle>
         <Glow />
         <Flames />

@@ -6,7 +6,7 @@ import FacebookLogo from './svgs/facebook';
 import InstagramLogo from './svgs/instagram';
 import TwitterLogo from './svgs/twitter';
 
-import { Wrapper } from '../styles/Globals.js';
+import { theme, Wrapper } from '../styles/Globals.js';
 
 import { StyledLink } from '../styles/HeaderStyles.js';
 
@@ -17,16 +17,44 @@ const Footer = () => (
     <Wrapper>
       <SocialIconsWrapper>
         <Link to="/">
-          <SpotifyLogo footerLogo id="footer-spotify" />
+          <SpotifyLogo
+            footerLogo
+            fill={`${theme.secondaryWhite}`}
+            height="30px"
+            width="30px"
+            footer="footer"
+            id="footer-spotify"
+          />
         </Link>
         <Link to="/">
-          <FacebookLogo footerLogo id="footer-facebook" />
+          <FacebookLogo
+            footerLogo
+            fill={`${theme.secondaryWhite}`}
+            height="30px"
+            width="30px"
+            footer="footer"
+            id="footer-facebook"
+          />
         </Link>
         <Link to="/">
-          <InstagramLogo footerLogo id="footer-instagram" />
+          <InstagramLogo
+            footerLogo
+            fill={`${theme.secondaryWhite}`}
+            height="30px"
+            width="30px"
+            footer="footer"
+            id="footer-instagram"
+          />
         </Link>
         <Link to="/">
-          <TwitterLogo footerLogo id="footer-twitter" />
+          <TwitterLogo
+            footerLogo
+            fill={`${theme.secondaryWhite}`}
+            height="30px"
+            width="30px"
+            footer="footer"
+            id="footer-twitter"
+          />
         </Link>
       </SocialIconsWrapper>
       <Text>© Spiritboard 2020</Text>

@@ -62,26 +62,13 @@ html {
     transform: rotate(-180deg) ;
     transition: all 0.3s ease;
   }
-  
-  #background-video{
-    position: absolute;
-    top: 0;
-    color: #f1f1f1;
-    background-color: rgba(0,0,0,.3);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-  }
 
 
   #spotify, #facebook, #instagram {
     margin-right: 35px;
   
   }
-  
+
   #spotify, #facebook, #instagram, #twitter {
     
     /* in order: x offset, y offset, blur size, spread size, color */
@@ -104,39 +91,26 @@ html {
   }
 
 
-
-
-
-
-  #footer-camera,#footer-spot,#footer-f,#footer-bird {
+  #footer {
     -webkit-transition: fill .5s ease-out;
     -moz-transition: fill .5s ease-out;
     -o-transition: fill .5s ease-out;
     transition: fill .5s ease-out;
   } 
 
-   #footer-camera:hover,#footer-spot:hover,#footer-f:hover,#footer-bird:hover {
+   #footer:hover {
     fill: #edb928;
   }
 
 
 
-
-
-path {
-  transform: scale(1);
-}
-
-
 textPath {
   font-family: ouijaBoard;
   letter-spacing: 2px;
+  font-size: 40px;
 
 }
 
-svg text {
-  fill: white;
-}
 
 
 

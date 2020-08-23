@@ -16,7 +16,7 @@ import InstagramLogo from '../components/svgs/instagram';
 import TwitterLogo from '../components/svgs/twitter';
 
 import { HeaderVideo, SocialIcons, H1 } from '../styles/HomeStyles.js';
-import { HeaderWrapper, OverlayText, SectionHeader } from '../styles/Globals.js';
+import { HeaderWrapper, OverlayText, SectionHeader, theme } from '../styles/Globals.js';
 
 const IndexPage = () => {
   const [seen, setSeen] = useState(false);
@@ -102,16 +102,16 @@ const IndexPage = () => {
           <H1>Spiritboard</H1>
           <SocialIcons>
             <Link to="/">
-              <SpotifyLogo id="spotify" headerLogo />
+              <SpotifyLogo fill={`${theme.secondaryWhite}`} height="30px" width="30px" id="spotify" headerLogo />
             </Link>
             <Link to="/">
-              <FacebookLogo id="facebook" headerLogo />
+              <FacebookLogo fill={`${theme.secondaryWhite}`} height="30px" width="30px" id="facebook" headerLogo />
             </Link>
             <Link to="/">
-              <InstagramLogo id="instagram" headerLogo />
+              <InstagramLogo fill={`${theme.secondaryWhite}`} height="30px" width="30px" id="instagram" headerLogo />
             </Link>
             <Link to="/">
-              <TwitterLogo id="twitter" headerLogo />
+              <TwitterLogo fill={`${theme.secondaryWhite}`} height="30px" width="30px" id="twitter" headerLogo />
             </Link>
           </SocialIcons>
         </OverlayText>
