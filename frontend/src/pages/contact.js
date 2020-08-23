@@ -29,7 +29,7 @@ const ContactPage = () => (
         </label>
 
         <label>
-          <Input type="email" id="email" name="email" placeholder="email" />
+          <Input type="email" id="email-form" name="email" placeholder="email" />
         </label>
 
         <label>
