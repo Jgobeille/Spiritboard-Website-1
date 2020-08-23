@@ -19,9 +19,9 @@ const ContactPage = () => (
     </HeaderWrapper>
     <FormWrapper>
       <Text>Want to book us for a show or questions about merch? Contact us here!</Text>
-      <form name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <Input type="hidden" name="bot-field" />
-        <Input type="hidden" name="form-name" value="contact" />
+      <form name="contact-form" method="POST" data-netlify="true">
+        {/* <Input type="hidden" name="bot-field" />
+        <Input type="hidden" name="form-name" value="contact" /> */}
         <label htmlFor="fname">
           <Input type="text" id="fname" name="firstname" placeholder="first name" />
         </label>
