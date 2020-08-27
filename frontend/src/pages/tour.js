@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 import Tour from '../components/tour';
 
 import { Text } from '../styles/HomeStyles';
-import { HeaderPic, HeaderWrapper, OverlayText, SectionHeader } from '../styles/Globals';
+import { HeaderPic, HeaderWrapper, OverlayText, SectionHeader, Wrapper } from '../styles/Globals';
 
 const TourPage = () => {
   const data = useStaticQuery(graphql`
@@ -34,19 +34,23 @@ const TourPage = () => {
           <SectionHeader big>TOUR</SectionHeader>
         </OverlayText>
       </HeaderWrapper>
-      {data.allStrapiTour.edges ? (
-        data.allStrapiTour.edges.map(tour => (
-          <Tour
-            date={tour.node.date}
-            location={tour.node.location}
-            name={tour.node.venuename}
-            tickets={tour.node.ticketsURL}
-            description={tour.node.description}
-            key={tour.node.strapiId}
-          />
-        ))
+      {data.allStrapiTour.edges.length === 1 ? (
+        <Wrapper>
+          <Text>There are no shows currently scheduled</Text>
+        </Wrapper>
       ) : (
-        <Text>There are no shows currently scheduled</Text>
+        data.allStrapiTour.edges
+          .slice(1)
+          .map(tour => (
+            <Tour
+              date={tour.node.date}
+              location={tour.node.location}
+              name={tour.node.venuename}
+              tickets={tour.node.ticketsURL}
+              description={tour.node.description}
+              key={tour.node.strapiId}
+            />
+          ))
       )}
     </Layout>
   );

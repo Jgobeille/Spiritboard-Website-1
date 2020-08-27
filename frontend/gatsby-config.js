@@ -1,7 +1,3 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
-
 module.exports = {
   siteMetadata: {
     title: `Spiritboard`,
@@ -20,7 +16,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: process.env.API_URL || 'http://localhost:1337',
+        apiURL: 'https://thawing-everglades-22469.herokuapp.com',
         contentTypes: [
           // List of the Content Types you want to be able to request from Gatsby.
           'post',

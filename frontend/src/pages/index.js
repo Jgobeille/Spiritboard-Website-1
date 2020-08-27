@@ -15,7 +15,7 @@ import InstagramLogo from '../components/svgs/instagram';
 import TwitterLogo from '../components/svgs/twitter';
 
 import { HeaderVideo, SocialIcons, H1, Text } from '../styles/HomeStyles.js';
-import { HeaderWrapper, OverlayText, SectionHeader, theme } from '../styles/Globals.js';
+import { HeaderWrapper, OverlayText, SectionHeader, theme, Wrapper } from '../styles/Globals.js';
 
 const IndexPage = () => {
   const [seen, setSeen] = useState(false);
@@ -116,19 +116,23 @@ const IndexPage = () => {
         </OverlayText>
       </HeaderWrapper>
       <SectionHeader>TOUR</SectionHeader>
-      {data.allStrapiTour.edges ? (
-        data.allStrapiTour.edges.map(tour => (
-          <Tour
-            date={tour.node.date}
-            location={tour.node.location}
-            name={tour.node.venuename}
-            tickets={tour.node.ticketsURL}
-            description={tour.node.description}
-            key={tour.node.strapiId}
-          />
-        ))
+      {data.allStrapiTour.edges.length === 1 ? (
+        <Wrapper>
+          <Text>There are no shows currently scheduled</Text>
+        </Wrapper>
       ) : (
-        <Text>There are no shows currently scheduled</Text>
+        data.allStrapiTour.edges
+          .slice(1)
+          .map(tour => (
+            <Tour
+              date={tour.node.date}
+              location={tour.node.location}
+              name={tour.node.venuename}
+              tickets={tour.node.ticketsURL}
+              description={tour.node.description}
+              key={tour.node.strapiId}
+            />
+          ))
       )}
 
       <SectionHeader>NEWS</SectionHeader>
