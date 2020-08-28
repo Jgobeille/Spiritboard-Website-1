@@ -86,6 +86,21 @@ const IndexPage = () => {
 
   const lastNews = data.allStrapiPost.edges.length - 1;
 
+  // Done with for loop instead of map to save efficiency from slicing the first item in the array
+  const shows = [];
+  for (let i = 1; i < data.allStrapiTour.edges.length; i += 1) {
+    shows.push(
+      <Tour
+        date={data.allStrapiTour.edges[i].node.date}
+        location={data.allStrapiTour.edges[i].node.location}
+        name={data.allStrapiTour.edges[i].node.venuename}
+        tickets={data.allStrapiTour.edges[i].node.ticketsURL}
+        description={data.allStrapiTour.edges[i].node.description}
+        key={data.allStrapiTour.edges[i].node.strapiId}
+      />
+    );
+  }
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -121,18 +136,7 @@ const IndexPage = () => {
           <Text>There are no shows currently scheduled</Text>
         </Wrapper>
       ) : (
-        data.allStrapiTour.edges
-          .slice(1)
-          .map(tour => (
-            <Tour
-              date={tour.node.date}
-              location={tour.node.location}
-              name={tour.node.venuename}
-              tickets={tour.node.ticketsURL}
-              description={tour.node.description}
-              key={tour.node.strapiId}
-            />
-          ))
+        <>{shows}</>
       )}
 
       <SectionHeader>NEWS</SectionHeader>

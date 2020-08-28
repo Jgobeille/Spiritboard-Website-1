@@ -31,6 +31,22 @@ const NewsPage = () => {
     }
   `);
 
+  // Done with for loop instead of map to save efficiency from slicing the first item in the array
+  const posts = [];
+  for (let i = 1; i < data.allStrapiPost.edges.length; i += 1) {
+    posts.push(
+      <News
+        title={data.allStrapiPost.edges[i].node.title}
+        date={data.allStrapiPost.edges[i].node.date}
+        image={data.allStrapiPost.edges[i].node.image ? data.allStrapiPost.edges[i].node.image.publicURL : ''}
+        description={data.allStrapiPost.edges[i].node.description}
+        firstName={data.allStrapiPost.edges[i].node.created_by.firstname}
+        lastName={data.allStrapiPost.edges[i].node.created_by.lastname}
+        key={data.allStrapiPost.edges[i].node.strapiId}
+      />
+    );
+  }
+
   return (
     <Layout>
       <SEO
@@ -48,19 +64,7 @@ const NewsPage = () => {
           <Text>There are no new updates yet</Text>
         </Wrapper>
       ) : (
-        data.allStrapiPost.edges
-          .slice(1)
-          .map(post => (
-            <News
-              title={post.node.title}
-              date={post.node.date}
-              image={post.node.image ? post.node.image.publicURL : ''}
-              description={post.node.description}
-              firstName={post.node.created_by.firstname}
-              lastName={post.node.created_by.lastname}
-              key={post.node.strapiId}
-            />
-          ))
+        <>{posts}</>
       )}
     </Layout>
   );
