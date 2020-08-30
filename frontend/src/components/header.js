@@ -90,7 +90,7 @@ class Header extends Component {
 
             <StyledLink to="/">Music</StyledLink>
 
-            <StyledLink to="/tour">Shows</StyledLink>
+            <StyledLink to="/shows">Shows</StyledLink>
 
             <StyledLink to="/">Videos</StyledLink>
 

@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
     <>
       <Header setBodyPositions={setBodyPositions} siteTitle={data.site.siteMetadata.title} />
       <div>
-        <main setBodyPositions={setBodyPositions}> {children}</main>
+        <main> {children}</main>
       </div>
       <Footer />
     </>

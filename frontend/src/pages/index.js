@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import Cookies from 'js-cookie';
 
 import Layout from '../components/layout';
 import Music from '../components/music';
 import News from '../components/news';
-import Tour from '../components/tour';
+import Shows from '../components/shows';
 import Videos from '../components/videos';
 import PopUp from '../components/popUp.js';
 import SEO from '../components/seo';
@@ -19,6 +20,7 @@ import { HeaderWrapper, OverlayText, SectionHeader, theme, Wrapper } from '../st
 
 const IndexPage = () => {
   const [seen, setSeen] = useState(false);
+  const [isCookie, setCookie] = useState(null);
 
   const setBodyPositions = (x, y, height, position) => {
     document.body.style.overflowX = x;
@@ -29,6 +31,7 @@ const IndexPage = () => {
 
   const togglePop = () => {
     setSeen(false);
+
     setBodyPositions('', '', '', '');
   };
 
@@ -51,7 +54,7 @@ const IndexPage = () => {
           }
         }
       }
-      allStrapiTour {
+      allStrapiShow {
         edges {
           node {
             strapiId
@@ -65,15 +68,21 @@ const IndexPage = () => {
       }
     }
   `);
-
   // Show popup after 3 seconds
   useEffect(() => {
+    setCookie(Cookies.get('disablePopup'));
     const timeout = setTimeout(() => {
-      setSeen(true);
-    }, 3000);
+      // If no cookie, show popup
+      if (!isCookie) {
+        setSeen(true);
+        // Set cookie
+        Cookies.set('disablePopup', 'disablePopup', { expires: 1 });
+        setCookie(Cookies.get('disablePopup'));
+      }
+    }, 5000);
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [isCookie]);
 
   // disable scrolling when pop up appears
   useEffect(() => {
@@ -88,15 +97,15 @@ const IndexPage = () => {
 
   // Done with for loop instead of map to save efficiency from slicing the first item in the array
   const shows = [];
-  for (let i = 1; i < data.allStrapiTour.edges.length; i += 1) {
+  for (let i = 1; i < data.allStrapiShow.edges.length; i += 1) {
     shows.push(
-      <Tour
-        date={data.allStrapiTour.edges[i].node.date}
-        location={data.allStrapiTour.edges[i].node.location}
-        name={data.allStrapiTour.edges[i].node.venuename}
-        tickets={data.allStrapiTour.edges[i].node.ticketsURL}
-        description={data.allStrapiTour.edges[i].node.description}
-        key={data.allStrapiTour.edges[i].node.strapiId}
+      <Shows
+        date={data.allStrapiShow.edges[i].node.date}
+        location={data.allStrapiShow.edges[i].node.location}
+        name={data.allStrapiShow.edges[i].node.venuename}
+        tickets={data.allStrapiShow.edges[i].node.ticketsURL}
+        description={data.allStrapiShow.edges[i].node.description}
+        key={data.allStrapiShow.edges[i].node.strapiId}
       />
     );
   }
@@ -113,7 +122,7 @@ const IndexPage = () => {
           Your browser does not support the video tag.
         </HeaderVideo>
         <OverlayText>
-          <H1>Spiritboard</H1>
+          <H1>Spirit Board</H1>
           <SocialIcons>
             <Link to="/">
               <SpotifyLogo fill={`${theme.secondaryWhite}`} height="30px" width="30px" id="spotify" headerLogo />
@@ -130,8 +139,8 @@ const IndexPage = () => {
           </SocialIcons>
         </OverlayText>
       </HeaderWrapper>
-      <SectionHeader>TOUR</SectionHeader>
-      {data.allStrapiTour.edges.length === 1 ? (
+      <SectionHeader>SHOWS</SectionHeader>
+      {data.allStrapiShow.edges.length === 1 ? (
         <Wrapper>
           <Text>There are no shows currently scheduled</Text>
         </Wrapper>

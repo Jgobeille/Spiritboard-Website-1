@@ -57,7 +57,7 @@ const Footer = () => (
           />
         </Link>
       </SocialIconsWrapper>
-      <Text>© Spiritboard 2020</Text>
+      <Text>© Spirit Board 2020</Text>
       <PrivacyPolicyWrapper>
         <StyledLink to="/privacy" target="_blank">
           privacy

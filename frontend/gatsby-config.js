@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Spiritboard`,
+    title: `Spirit Board`,
     description: `Punk rock band from Cincinnati, Ohio`,
     author: `@jamieGobeille`,
   },
@@ -20,7 +20,7 @@ module.exports = {
         contentTypes: [
           // List of the Content Types you want to be able to request from Gatsby.
           'post',
-          'tour',
+          'show',
         ],
         queryLimit: 1000,
       },

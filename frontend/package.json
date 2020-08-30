@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Spirit Board",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A kickass website for Cincinnati locals, Spirit Board!",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jamie Gobeille <jamie.gobeille.codes@gmail.com>",
   "dependencies": {
     "dotenv": "^8.2.0",
     "gatsby": "^2.24.26",
@@ -16,6 +16,7 @@
     "gatsby-source-filesystem": "^2.3.23",
     "gatsby-source-strapi": "0.0.12",
     "gatsby-transformer-sharp": "^2.5.12",
+    "js-cookie": "^2.2.1",
     "moment": "^2.27.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
