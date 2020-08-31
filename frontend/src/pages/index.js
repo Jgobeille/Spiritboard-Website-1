@@ -162,7 +162,9 @@ const IndexPage = () => {
           key={data.allStrapiPost.edges[lastNews].node.strapiId}
         />
       ) : (
-        <Text>There are no new updates yet</Text>
+        <Wrapper>
+          <Text>There are no new updates yet</Text>
+        </Wrapper>
       )}
       <SectionHeader>MUSIC</SectionHeader>
       <Music />
