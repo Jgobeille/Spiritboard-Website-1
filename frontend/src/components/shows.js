@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 
-import { ATag, Text, ShowDescription, ShowsTable, ShowRow, ShowTickets } from '../styles/HomeStyles.js';
+import { ATag, Text, ShowDescription, ShowsTable, ShowRow, ShowTickets } from '../styles/ShowsStyles.js';
 
 import { Button, Wrapper } from '../styles/Globals.js';
 

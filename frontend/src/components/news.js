@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Wrapper } from '../styles/Globals.js';
 
-import { Article, ArticleAuthor, ArticleContent, ArticleDate, ArticleTitle } from '../styles/HomeStyles.js';
+import { Article, ArticleAuthor, ArticleContent, ArticleDate, ArticleTitle } from '../styles/NewsStyles.js';
 
 const News = ({ title, date, image, description, firstName, lastName }) => {
   const dateToBeFormatted = new Date(date);

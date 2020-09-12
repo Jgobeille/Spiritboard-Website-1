@@ -63,7 +63,6 @@ export const Button = styled.button`
   -o-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
   cursor: pointer;
-  outline: none;
 
   &:hover {
     color: ${theme.accentPinkRed};
