@@ -24,3 +24,8 @@ export const H1 = styled.h1`
 export const SocialIcons = styled.div`
   z-index: 2;
 `;
+
+export const Text = styled.p`
+  color: ${theme.secondaryWhite};
+  margin-bottom: 5px;
+`;
