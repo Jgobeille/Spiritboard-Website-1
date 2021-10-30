@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 export const fadeIn = keyframes`
     0% {opacity:0;}
@@ -10,10 +10,9 @@ export const Modal = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
   z-index: 15;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   right: 0;
   bottom: 0;
