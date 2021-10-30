@@ -1,20 +1,29 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
+import { Link } from "gatsby";
 
-import SpotifyLogo from './svgs/spotify';
-import FacebookLogo from './svgs/facebook';
-import InstagramLogo from './svgs/instagram';
-import TwitterLogo from './svgs/twitter';
+import SpotifyLogo from "./svgs/spotify";
+import FacebookLogo from "./svgs/facebook";
+import InstagramLogo from "./svgs/instagram";
+import TwitterLogo from "./svgs/twitter";
 
-import { theme, Wrapper } from '../styles/Globals.js';
+import { theme, Wrapper } from "../styles/Globals.js";
 
-import { StyledLink } from '../styles/HeaderStyles.js';
+import { StyledLink } from "../styles/HeaderStyles.js";
+import SignUp from "./signUp";
 
-import { FooterSection, SocialIconsWrapper, PrivacyPolicyWrapper, Text } from '../styles/FooterStyles.js';
+import {
+  FooterSection,
+  SocialIconsWrapper,
+  PrivacyPolicyWrapper,
+  Text,
+} from "../styles/FooterStyles.js";
 
 const Footer = () => (
   <FooterSection>
     <Wrapper>
+      <Text>Sign up to get updates on new merch and upcoming shows!</Text>
+      <SignUp />
+
       <SocialIconsWrapper>
         <Link to="/">
           <SpotifyLogo
@@ -61,7 +70,7 @@ const Footer = () => (
       <PrivacyPolicyWrapper>
         <StyledLink to="/privacy" target="_blank">
           privacy
-        </StyledLink>{' '}
+        </StyledLink>{" "}
         |
         <StyledLink to="/terms" target="_blank">
           terms

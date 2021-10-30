@@ -1,15 +1,15 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { theme } from './Globals.js';
+import { theme } from "./Globals.js";
 
 export const HeaderVideo = styled.video`
   z-index: 1;
   top: 0;
   color: #f1f1f1;
   background-color: rgba(0, 0, 0, 0.3);
-  height: 92vh;
+  height: 100vh;
   width: 100%;
-  object-fit: fill;
+  object-fit: cover;
   padding: 0;
 `;
 
