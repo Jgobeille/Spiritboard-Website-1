@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 /* 
   Learned how to set up media Queries here:
@@ -8,24 +8,24 @@ import styled from 'styled-components';
 // Theme
 
 export const theme = {
-  primaryBlack: '#0F0E0E',
-  secondaryWhite: '#f7f7ff',
-  highlightYellow: '#edb928',
-  headerPurple: '#661384',
-  accentPinkRed: '#f61067',
-  lavender: '#c9c9ee',
-  primaryFont: 'ouijaboard',
+  primaryBlack: "#0F0E0E",
+  secondaryWhite: "#f7f7ff",
+  highlightYellow: "#edb928",
+  headerPurple: "#661384",
+  accentPinkRed: "#f61067",
+  lavender: "#c9c9ee",
+  primaryFont: "ouijaboard",
 };
 // Media Queries
 
 const size = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '425px',
-  tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
-  desktop: '2560px',
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "2560px",
 };
 
 export const minWidthDevice = {
@@ -92,13 +92,12 @@ export const SectionHeader = styled.h1`
   /* top | right | bottom | left */
   margin: 50px 0 50px 0;
   text-align: center;
-  font-size: ${props => (props.big ? '9vw' : '2em')};
+  font-size: ${(props) => (props.big ? "9vw" : "2em")};
 `;
 
 export const Wrapper = styled.div`
   width: 90%;
   max-width: 1024px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,7 +107,7 @@ export const Wrapper = styled.div`
 export const HeaderWrapper = styled(Wrapper)`
   width: 100%;
   max-width: 100%;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   top: 8vh;

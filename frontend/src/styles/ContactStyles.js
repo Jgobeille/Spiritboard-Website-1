@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { Button, theme, Wrapper, maxWidthDevice } from './Globals';
+import { Button, theme, Wrapper, maxWidthDevice } from "./Globals";
 
 export const Input = styled.input`
   font-family: inherit;
@@ -17,7 +17,11 @@ export const Input = styled.input`
 
   &:focus {
     border-width: 3px;
-    border-image: linear-gradient(to right, ${theme.accentPinkRed}, ${theme.lavender});
+    border-image: linear-gradient(
+      to right,
+      ${theme.accentPinkRed},
+      ${theme.lavender}
+    );
     border-image-slice: 1;
   }
 `;
@@ -37,6 +41,10 @@ export const FormWrapper = styled(Wrapper)`
 export const FormButton = styled(Button)`
   margin: 0 20px 0 0;
   padding: 0.5em 2em;
+
+  @media screen and ${maxWidthDevice.mobileL} {
+    margin: 0 !important;
+  }
 `;
 
 export const Text = styled.p`

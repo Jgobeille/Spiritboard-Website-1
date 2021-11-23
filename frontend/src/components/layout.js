@@ -10,10 +10,11 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Footer from "./footer";
-import Header from "./header";
 
 import "./layout.css";
 import "./styles.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

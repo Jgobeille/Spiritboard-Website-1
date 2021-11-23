@@ -1,12 +1,10 @@
 import React from "react";
-import { Link } from "gatsby";
 
 import SpotifyLogo from "./svgs/spotify";
 import FacebookLogo from "./svgs/facebook";
 import InstagramLogo from "./svgs/instagram";
-import TwitterLogo from "./svgs/twitter";
 
-import { theme, Wrapper } from "../styles/Globals.js";
+import { theme } from "../styles/Globals.js";
 
 import { StyledLink } from "../styles/HeaderStyles.js";
 import SignUp from "./signUp";
@@ -16,16 +14,22 @@ import {
   SocialIconsWrapper,
   PrivacyPolicyWrapper,
   Text,
+  FooterLogoImage,
+  FooterWrapper,
 } from "../styles/FooterStyles.js";
 
 const Footer = () => (
   <FooterSection>
-    <Wrapper>
+    <FooterWrapper>
+      <FooterLogoImage
+        src="https://spirit-board-site-images.s3.us-east-2.amazonaws.com/WHTpnglogo.png"
+        alt="Spiritboard Logo"
+      />
       <Text>Sign up to get updates on new merch and upcoming shows!</Text>
       <SignUp />
 
       <SocialIconsWrapper>
-        <Link to="/">
+        <a href="https://open.spotify.com/artist/6hDBu2nL98TrcIopXy9IGJ?si=TccfE5UeQ_WQcBymTS-K0w">
           <SpotifyLogo
             footerLogo
             fill={`${theme.secondaryWhite}`}
@@ -34,8 +38,8 @@ const Footer = () => (
             footer="footer"
             id="footer-spotify"
           />
-        </Link>
-        <Link to="/">
+        </a>
+        <a href="https://www.facebook.com/SpiritBoardBand">
           <FacebookLogo
             footerLogo
             fill={`${theme.secondaryWhite}`}
@@ -44,8 +48,8 @@ const Footer = () => (
             footer="footer"
             id="footer-facebook"
           />
-        </Link>
-        <Link to="/">
+        </a>
+        <a href="https://www.instagram.com/spiritboardband/">
           <InstagramLogo
             footerLogo
             fill={`${theme.secondaryWhite}`}
@@ -54,20 +58,10 @@ const Footer = () => (
             footer="footer"
             id="footer-instagram"
           />
-        </Link>
-        <Link to="/">
-          <TwitterLogo
-            footerLogo
-            fill={`${theme.secondaryWhite}`}
-            height="30px"
-            width="30px"
-            footer="footer"
-            id="footer-twitter"
-          />
-        </Link>
+        </a>
       </SocialIconsWrapper>
       <Text>© Spirit Board 2020</Text>
-      <PrivacyPolicyWrapper>
+      {/* <PrivacyPolicyWrapper>
         <StyledLink to="/privacy" target="_blank">
           privacy
         </StyledLink>{" "}
@@ -75,8 +69,8 @@ const Footer = () => (
         <StyledLink to="/terms" target="_blank">
           terms
         </StyledLink>
-      </PrivacyPolicyWrapper>
-    </Wrapper>
+      </PrivacyPolicyWrapper> */}
+    </FooterWrapper>
   </FooterSection>
 );
 

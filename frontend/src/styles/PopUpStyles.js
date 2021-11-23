@@ -18,6 +18,7 @@ export const Modal = styled.div`
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 1);
+  position: absolute;
 
   animation: ${fadeIn} ease 3s;
   -webkit-animation: ${fadeIn} ease 3s;
