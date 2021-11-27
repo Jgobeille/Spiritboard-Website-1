@@ -43,7 +43,8 @@ export const FormButton = styled(Button)`
   padding: 0.5em 2em;
 
   @media screen and ${maxWidthDevice.mobileL} {
-    margin: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 1rem;
   }
 `;
 

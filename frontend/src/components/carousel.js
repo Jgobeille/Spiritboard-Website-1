@@ -16,6 +16,18 @@ export default class Carousel extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      customPaging: (i) => (
+        <button
+          className
+          style={{
+            "&::before": {
+              color: "white !important",
+            },
+          }}
+        >
+          {i + 1}
+        </button>
+      ),
     };
     return (
       <Wrapper>

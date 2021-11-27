@@ -13,108 +13,104 @@ html {
   font: 112.5%/1.45em roboto;
 }
 
-@media screen and (max-width: 768px){
-    body,html {
-      overflow-x: hidden;
-    }
+@media screen and (max-width: 768px) {
+  body,
+  html {
+    overflow-x: hidden;
   }
+}
 
-
-  /*----------------------------- 
+/*----------------------------- 
   
   Header/ Navigation 
   
   -------------------------------*/
-  
-  .isActive {
-    transform: translateX(0%) !important;
-  }
 
+.isActive {
+  transform: translateX(0%) !important;
+}
 
-  
-  div.toggle.line1 {
-    transform: rotate(-45deg) translate(-5px,6px);
-    transition: all 0.3s ease;
-  }
-  
-  div.toggle.line2 {
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-  
-  div.toggle.line3 {
-    transform: rotate(45deg) translate(-5px,-6px) ;
-    transition: all 0.3s ease;
-  }
-  
-  
-  div.un-toggle.line1 {
-    transform: rotate(180deg) ;
-    transition: all 0.3s ease;
-  }
-  
-  div.un-toggle.line2 {
-    opacity: 1;
-    transition: all 0.3s ease;
-  }
-  
-  div.un-toggle.line3 {
-    transform: rotate(-180deg) ;
-    transition: all 0.3s ease;
-  }
+div.toggle.line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+  transition: all 0.3s ease;
+}
 
+div.toggle.line2 {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
 
-  #spotify, #facebook, #instagram {
-    margin-right: 35px;
-  
-  }
+div.toggle.line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+  transition: all 0.3s ease;
+}
 
-  #spotify, #facebook, #instagram, #twitter {
-    
-    /* in order: x offset, y offset, blur size, spread size, color */
-    /* blur size and spread size are optional (they default to 0) */
-    box-shadow:
-    0 0 10px 5px #fff,  
-    0 0 20px 10px #f0f, 
-    0 0 30px 15px #0ff; 
-    
-  }
+div.un-toggle.line1 {
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
 
-  #footer-spotify, #footer-facebook, #footer-instagram {
-    margin-right: 10px;
-    
-    
-  }
+div.un-toggle.line2 {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
 
-  h4 {
-    margin-block-end: 0;
-  }
+div.un-toggle.line3 {
+  transform: rotate(-180deg);
+  transition: all 0.3s ease;
+}
 
+#spotify,
+#facebook,
+#instagram {
+  margin-right: 35px;
+}
 
-  #footer {
-    -webkit-transition: fill .5s ease-out;
-    -moz-transition: fill .5s ease-out;
-    -o-transition: fill .5s ease-out;
-    transition: fill .5s ease-out;
-  } 
+#spotify,
+#facebook,
+#instagram,
+#twitter {
+  /* in order: x offset, y offset, blur size, spread size, color */
+  /* blur size and spread size are optional (they default to 0) */
+  box-shadow: 0 0 10px 5px #fff, 0 0 20px 10px #f0f, 0 0 30px 15px #0ff;
+}
 
-   #footer:hover {
-    fill: #edb928;
-  }
+#footer-spotify,
+#footer-facebook,
+#footer-instagram {
+  margin-right: 10px;
+}
 
+h4 {
+  margin-block-end: 0;
+}
 
+#footer {
+  -webkit-transition: fill 0.5s ease-out;
+  -moz-transition: fill 0.5s ease-out;
+  -o-transition: fill 0.5s ease-out;
+  transition: fill 0.5s ease-out;
+}
+
+#footer:hover {
+  fill: #edb928;
+}
 
 textPath {
   font-family: ouijaBoard;
   letter-spacing: 2px;
   font-size: 40px;
-
 }
 
 .hidden {
   display: none;
 }
 
+.slick-dots li.slick-active button::before {
+  opacity: 0.75;
+  color: white !important;
+}
 
-
-
+.slick-dots li button::before {
+  color: white;
+}
