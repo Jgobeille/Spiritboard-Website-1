@@ -35,19 +35,19 @@ export default class Carousel extends Component {
           <div>
             <img
               alt="spiritboard merch"
-              src="https://spirit-board-site-images.s3.us-east-2.amazonaws.com/SBmerch001-3.jpg"
+              src="https://spirit-board-site-images.s3.us-east-2.amazonaws.com/SBmerch1-3.jpg"
             />
           </div>
           <div>
             <img
               alt="spiritboard merch"
-              src="https://spirit-board-site-images.s3.us-east-2.amazonaws.com/SBmerch001-4.jpg"
+              src="https://spirit-board-site-images.s3.us-east-2.amazonaws.com/SBtShirt.jpg"
             />
           </div>
           <div>
             <img
               alt="spiritboard merch"
-              src="https://spirit-board-site-images.s3.us-east-2.amazonaws.com/SBmerch001.jpg"
+              src="https://spirit-board-site-images.s3.us-east-2.amazonaws.com/windbreaker.jpg"
             />
           </div>
         </Slider>
